@@ -8,6 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" href="images/favicon.ico" type="image/ico" />
 
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+        <!-- TODO: Se passer de FontAwesome. -->
+        <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <title>Smart Library </title>
 
     <!-- Bootstrap -->
@@ -135,7 +139,7 @@
 
                   <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="login.html">Login Page</a></li>
+                      <li><a href="login.php">Login Page</a></li>
                       <li><a href="pricing_tables.html">Pricing Tables</a></li>
                     </ul>
                   </li>
@@ -155,7 +159,7 @@
               <a data-toggle="tooltip" data-placement="top" title="Lock">
                 <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
               </a>
-              <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+              <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.php">
                 <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
               </a>
             </div>
@@ -177,7 +181,7 @@
                     <img src="images/img.jpg" alt="">Mohamed Ayedi
                   </a>
                   <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
-                 <a class="dropdown-item"  href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                 <a class="dropdown-item"  href="login.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
                   </div>
                 </li>
 
@@ -259,261 +263,28 @@
             <div class="col-md-4 col-sm-4  tile_stats_count" style="padding-left: 50px padding-right: 50px;">
               <span class="count_top"><i class="fa fa-user"style="padding-right: 10px;"></i>Nombre d'etudiants </span>
               <div class="count">2500</div>
-                <button type="button" class="btn btn-danger btn-xs">modifier<span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;"></span></button>
+                <button type="button" class="btn btn-success btn-xs"><a href="contacts.html" style="color: white;">modifier</a><span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;"></span></button>
             </div>
             
             
            
             <div class="col-md-4 col-sm-4  tile_stats_count" style="padding-left: 50px padding-right: 50px;">
               <span class="count_top"><i class="fa fa-books"style="padding-right: 10px;"></i> Nombre de chaises</span>
-              <div class="count">2,315</div>
- <button type="button" class="btn btn-success">modifier<span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;"></span></button>
+              <div class="count">100</div>
+ <button type="button" class="btn btn-info">modifier<span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;"></span></button>
               
             </div>
              <div class="col-md-4 col-sm-4  tile_stats_count" style="padding-left: 50px padding-right: 50px;">
-              <span class="count_top"><span class="glyphicon glyphicon-time" aria-hidden="true"style="padding-right: 10px;"></span> Horaires</span>
-              <div class="count">4,567</div> 
-                    <button type="button" class="btn btn-info">modifier<span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;"></span></button>
-
-                   
-              
-            
-      </div></div>
-      <div class="x_panel">
-                <div class="x_title">
-                  <h2><i class="fa fa-exclamation-circle" style="padding-right: 20px;"></i>Reclamations</h2>
-                  <ul class="nav navbar-right panel_toolbox">
-                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                    </li>
-                    <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <a class="dropdown-item" href="#">Settings 1</a>
-                          <a class="dropdown-item" href="#">Settings 2</a>
-                        </div>
-                    </li>
-                    <li><a class="close-link"><i class="fa fa-close"></i></a>
-                    </li>
-                  </ul>
-                  <div class="clearfix"></div>
-                </div>
-                <div class="x_content">
-
-                  <!-- modals -->
-                  
-                </div>
-              </div>
-      <div class="x_panel" style="">
-
-    <div class="x_title">
-
-        <h2> 	<span class="glyphicon glyphicon-time" aria-hidden="true"style="padding-right: 10px;"></span>Horaires</h2>
-        <ul class="nav navbar-right panel_toolbox">
-            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-            </li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Settings 1</a>
-                    </li>
-                    <li><a href="#">Settings 2</a>
-                    </li>
-                </ul>
-            </li>
-            <li><a class="close-link"><i class="fa fa-close"></i></a>
-            </li>
-        </ul>
-        <div class="clearfix"></div>
-    </div>
-    <div class="x_content">
-
-        <div class="container">
-            <div class="row">
- <button type="button" class="btn btn-info" data-toggle="modal" data-target=".bs-example-modal-lg"> modifier<span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;">
-</button>
-
-                  <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
-                    <div class="modal-dialog modal-lg">
-                      <div class="modal-content">
-
-                        <div class="modal-header">
-                         
-                          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
-                          </button>
-                        </div>
-
-                        <div class="modal-body">
-                       <div class="col-sm-">
-                    <h2 class="day">Lundi</h2> <small>For 24H format use format: 'HH:mm'</small>
-                    <div class="form-group">
-                        <div class="input-group date" id="myDatepicker3">
-                            <input type="text" class="form-control">
-                            <span class="input-group-addon">
-                               <span class="glyphicon glyphicon-calendar"></span>
-                            </span>
-                        </div>
-                    </div>
-                </div><div class="col-sm-3">
-                    Only Time Picker <small>For 24H format use format: 'HH:mm'</small>
-                    <div class="form-group">
-                        <div class="input-group date" id="myDatepicker3">
-                            <input type="text" class="form-control">
-                            <span class="input-group-addon">
-                               <span class="glyphicon glyphicon-calendar"></span>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                
-                 <div class="col-sm-3">
-                    Only Time Picker <small>For 24H format use format: 'HH:mm'</small>
-                    <div class="form-group">
-                        <div class="input-group date" id="myDatepicker2">
-                            <input type="text" class="form-control">
-                            <span class="input-group-addon">
-                               <span class="glyphicon glyphicon-calendar"></span>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                          <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
-
-                      </div>
-                    </div>
-                  </div>
-               
-                
-                
-                
+              <span class="count_top"><i class="fa fa-books"style="padding-right: 10px;"></i>Documents </span>
+              <div class="count">200</div>
+                <button type="button" class="btn btn-success btn-xs"><a href="emprunte.php" style="color: white;">plus d'infos</a><span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;"></span></button>
             </div>
-        </div>
-    </div>
-</div>
-
-<div class="x_panel">
-                <div class="x_title">
-                  <h2>Split Button Dropdown</h2>
-                  <ul class="nav navbar-right panel_toolbox">
-                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                    </li>
-                    <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                      <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Settings 1</a>
-                        </li>
-                        <li><a href="#">Settings 2</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li><a class="close-link"><i class="fa fa-close"></i></a>
-                    </li>
-                  </ul>
-                  <div class="clearfix"></div>
-                </div>
-                <div class="x_content">
-
-                  <!-- Split button -->
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-danger">Action</button>
-                    <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span class="sr-only">Toggle Dropdown</span>
-                    </button>
-                    <div class="dropdown-menu">
-                    	                    <form class="dropdown-menu p-4">
-  <div class="form-group">
-    <label for="exampleDropdownFormEmail2">Email address</label>
-    <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com">
-  </div>
-  <div class="form-group">
-    <label for="exampleDropdownFormPassword2">Password</label>
-    <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password">
-  </div>
-  <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="dropdownCheck2">
-    <label class="form-check-label" for="dropdownCheck2">
-      Remember me
-    </label>
-  </div>
-  <button type="submit" class="btn btn-primary">Sign in</button>
-</form>
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Separated link</a>
-                    </div>
-                  </div>
-
-                  <!-- Split button -->
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-danger">Action</button>
-                    <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span class="sr-only">Toggle Dropdown</span>
-                    </button>
-                    <div class="dropdown-menu">
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Separated link</a>
-                    </div>
-                  </div>
-
-                  <!-- Split button -->
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-danger">Action</button>
-                    <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span class="sr-only">Toggle Dropdown</span>
-                    </button>
-                    <div class="dropdown-menu">
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Separated link</a>
-                    </div>
-                  </div>
-
-
-                </div>
-              </div>
-
-        </div>
-<!-- pie chart -->
-              <div class="col-md-6 col-sm-6  ">
+             </div>
+             <div class="col-md-12">
+             	  <div class="col-md-4">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Pie Chart <small>Sessions</small></h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Settings 1</a>
-                            <a class="dropdown-item" href="#">Settings 2</a>
-                          </div>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="x_content2">
-                    <div id="graph_donut" style="width:100%; height:300px;"></div>
-                  </div>
-                </div>
-              </div>
-              <!-- /Pie chart -->
-
-         <div class="col-md-12 ">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2>Informations</h2>
+                    <h2>Places disponibles</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -532,227 +303,87 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content" style="display: block;">
-                    <div class="col-md-2">
-                      <p>Nombre etudiants existants <br/>dans la biblioteque</p>
-                      <input class="knob" data-width="100" data-height="120" data-cursor=true data-fgColor="#34495E" value="29">
+                   
+                    
+                      <input class="knob" data-width="200" data-height="200" data-displayPrevious=true data-fgColor="#26B99A" data-skin="tron" data-thickness=".2" value="20">
                     </div>
-
-                    <div class="col-md-2">
-                      <p>Nombre de places disponibles <br/>dans la biblioteque</p>
-                      <input class="knob" data-width="110" data-height="120" data-displayPrevious=true data-fgColor="#26B99A" data-skin="tron" data-thickness=".2" value="75">
-                    </div>
-                    <div class="col-md-2">
-                      <p>  Tempurature<br/>.</p>
-                      <input class="knob" data-width="100" data-height="120" data-min="-10000" data-displayPrevious=true data-fgColor="#26B99A" data-max="10000" data-step=".1" value="0">
-                    </div>
-                    <div class="col-md-2">
-                      <p></p>
-                      <input class="knob" data-width="100" data-height="120" data-angleOffset=-125 data-angleArc=250 data-fgColor="#34495E" data-rotation="anticlockwise" value="35">
-                    </div>
-                    <div class="col-md-2">
-                      <p>Alternate design</p>
-                      <input class="knob" data-width="110" data-height="120" data-displayPrevious=true data-fgColor="#26B99A" data-skin="tron" data-thickness=".2" value="75">
-                    </div>
-                    <div class="col-md-2">
-                      <p>Angle offset</p>
-                      <input class="knob" data-width="100" data-height="120" data-angleOffset=90 data-linecap=round data-fgColor="#26B99A" value="35">
-                    </div>
+                   
                     
                     
                   </div>
                 </div>
-              </div>
-
-          <div class="row">
-            <div class="col-md-12 col-sm-12 ">
-              <div class="dashboard_graph">
-
-                <div class="row x_title">
-                  <div class="col-md-6">
-                    <h3>Nombre de visites <small>a la bibliotheque</small></h3>
-                  </div>
-                  <div class="col-md-6">
-                    <div id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
-                      <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
-                      <span>December 30, 2014 - January 28, 2015</span> <b class="caret"></b>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-md-9 col-sm-9 ">
-                  <div id="chart_plot_01" class="demo-placeholder"></div>
-                </div>
-               
-
-                <div class="clearfix"></div>
-              </div>
-            </div>
-
-          </div>
-          <br />
-<div class="col-md-12 col-sm-12 ">
+            
+                 <div class="col-md-4 ">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2><i class="fa fa-book" style="padding-right: 20px;"></i>Documents<small>Stockage et empruntes</small></h2>
+                    <h2>Nombre etudiants existants </h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
                       <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Settings 1</a>
-                            <a class="dropdown-item" href="#">Settings 2</a>
-                          </div>
+                        <ul class="dropdown-menu" role="menu" x-placement="bottom-start" style="position will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 30px, 0px);">
+                          <li><a href="#">Settings 1</a>
+                          </li>
+                          <li><a href="#">Settings 2</a>
+                          </li>
+                        </ul>
                       </li>
                       <li><a class="close-link"><i class="fa fa-close"></i></a>
                       </li>
                     </ul>
                     <div class="clearfix"></div>
                   </div>
-                  <div class="x_content">
-                      <div class="row">
-                          <div class="col-sm-12">
-                            <div class="card-box table-responsive">
-                                       <div id="datatable-buttons_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap no-footer"><table id="datatable-buttons" class="table table-striped table-bordered dataTable no-footer dtr-inline" style="width: 100%;" role="grid" aria-describedby="datatable-buttons_info">
-                                       	<div class="row">
-									<div class="col-sm-6">
-										<div class="mb-md">
-											<button type="button" id="add_button" data-toggle="modal" data-target="#userModal" class="btn btn-info btn-lg">Ajouter<i class="fa fa-plus" style="padding-left: 20px;"></i></button>
-										</div>
-									</div>
-								</div>
-								<div id="userModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		 <div class="modal-dialog" role="document">
-		  <form method="post" id="user_form" enctype="multipart/form-data">
-		   <div class="modal-content">
-			<div class="modal-header">
-			 <button type="button" class="close" data-dismiss="modal">&times;</button>
-			 <h4 class="modal-title" id="myModalLabel" >Ajouter une emprunte</h4>
-			</div>
-			<div class="modal-body">
-			 <label>id-Emprunteur</label>
-			 <input type="text" name="reference" id="reference" class="form-control"  />
-			 <br />
-			 <label>Date-Emprunte</label>
-			 <input type="text" name="designation" id="designation" class="form-control" />
-			 <br />
-			  <label>Date-retour</label>
-			 <input type="text" name="categorie" id="categorie" class="form-control" />
-			 <br />
-			 <br />
-			  <label>nom-Livre</label>
-			 <input type="text" name="quantite" id="quantite" class="form-control" />
-			 
-			 <br />
-			 
-			 
-			</div>
-			<div class="modal-footer">
-			 <input type="hidden" name="id-Emprunteur" id="id-Emprunteur" />
-			 <input type="hidden" name="operation" id="operation" />
-			 <input type="submit" name="action" id="action" class="btn btn-success" value="Add" />
-			 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			</div>
-		   </div>
-		  </form>
-		 </div>
-			</div>
-                      <thead>
-                        <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 80px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">id-Emprunteur</th><th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 135px;" aria-label="Position: activate to sort column ascending">Date-Emprunte</th><th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 59px;" aria-label="Office: activate to sort column ascending">Date-retour</th><th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 25px;" aria-label="Age: activate to sort column ascending">id-Livre</th><th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 52px;" aria-label="Start date: activate to sort column ascending">nom-livre</th><th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 48px;" aria-label="Salary: activate to sort column ascending">Domaine</th></tr>
-                      </thead>
-
-
-                      <tbody>
+                  <div class="x_content" style="display: block;">
+                    
                      
-                      <tr role="row" class="odd">
-                          <td tabindex="0" class="sorting_1">Airi Satou</td>
-                          <td></td>
-                          <td>Tokyo</td>
-                          <td>33</td>
-                          <td>2008/11/28</td>
-                          <td>$162,700</td>
-                        </tr><tr role="row" class="even">
-                          <td class="sorting_1" tabindex="0">Angelica Ramos</td>
-                          <td>Chief Executive Officer (CEO)</td>
-                          <td>London</td>
-                          <td>47</td>
-                          <td>2009/10/09</td>
-                          <td>$1,200,000</td>
-                        </tr><tr role="row" class="odd">
-                          <td tabindex="0" class="sorting_1">Ashton Cox</td>
-                          <td>Junior Technical Author</td>
-                          <td>San Francisco</td>
-                          <td>66</td>
-                          <td>2009/01/12</td>
-                          <td>$86,000</td>
-                        </tr><tr role="row" class="even">
-                          <td class="sorting_1" tabindex="0">Bradley Greer</td>
-                          <td>Software Engineer</td>
-                          <td>London</td>
-                          <td>41</td>
-                          <td>2012/10/13</td>
-                          <td>$132,000</td>
-                        </tr><tr role="row" class="odd">
-                          <td class="sorting_1" tabindex="0">Brenden Wagner</td>
-                          <td>Software Engineer</td>
-                          <td>San Francisco</td>
-                          <td>28</td>
-                          <td>2011/06/07</td>
-                          <td>$206,850</td>
-                        </tr><tr role="row" class="even">
-                          <td tabindex="0" class="sorting_1">Brielle Williamson</td>
-                          <td>Integration Specialist</td>
-                          <td>New York</td>
-                          <td>61</td>
-                          <td>2012/12/02</td>
-                          <td>$372,000</td>
-                        </tr><tr role="row" class="odd">
-                          <td class="sorting_1" tabindex="0">Bruno Nash</td>
-                          <td>Software Engineer</td>
-                          <td>London</td>
-                          <td>38</td>
-                          <td>2011/05/03</td>
-                          <td>$163,500</td>
-                        </tr><tr role="row" class="even">
-                          <td class="sorting_1" tabindex="0">Caesar Vance</td>
-                          <td>Pre-Sales Support</td>
-                          <td>New York</td>
-                          <td>21</td>
-                          <td>2011/12/12</td>
-                          <td>$106,450</td>
-                        </tr><tr role="row" class="odd">
-                          <td class="sorting_1" tabindex="0">Cara Stevens</td>
-                          <td>Sales Assistant</td>
-                          <td>New York</td>
-                          <td>46</td>
-                          <td>2011/12/06</td>
-                          <td>$145,600</td>
-                        </tr><tr role="row" class="even">
-                          <td tabindex="0" class="sorting_1">Cedric Kelly</td>
-                          <td>Senior Javascript Developer</td>
-                          <td>Edinburgh</td>
-                          <td>22</td>
-                          <td>2012/03/29</td>
-                          <td>$433,060</td>
-                        </tr></tbody>
-                    </table><div class="dataTables_paginate paging_simple_numbers" id="datatable-buttons_paginate"><ul class="pagination"><li class="paginate_button previous disabled" id="datatable-buttons_previous"><a href="#" aria-controls="datatable-buttons" data-dt-idx="0" tabindex="0">Previous</a></li><li class="paginate_button active"><a href="#" aria-controls="datatable-buttons" data-dt-idx="1" tabindex="0">1</a></li><li class="paginate_button "><a href="#" aria-controls="datatable-buttons" data-dt-idx="2" tabindex="0">2</a></li><li class="paginate_button "><a href="#" aria-controls="datatable-buttons" data-dt-idx="3" tabindex="0">3</a></li><li class="paginate_button "><a href="#" aria-controls="datatable-buttons" data-dt-idx="4" tabindex="0">4</a></li><li class="paginate_button "><a href="#" aria-controls="datatable-buttons" data-dt-idx="5" tabindex="0">5</a></li><li class="paginate_button "><a href="#" aria-controls="datatable-buttons" data-dt-idx="6" tabindex="0">6</a></li><li class="paginate_button next" id="datatable-buttons_next"><a href="#" aria-controls="datatable-buttons" data-dt-idx="7" tabindex="0">Next</a></li></ul></div></div>
+                       <input class="knob" data-width="200" data-height="200" data-angleOffset=-125 data-angleArc=250 data-fgColor="#e01a1a" data-rotation="anticlockwise" value="80">
+                 
+
+                    
+                   
+                    
+                    
                   </div>
                 </div>
               </div>
-            </div>
-                </div>
-              </div>
-              <div class="panel-body">
-								
-						
-						
+                <!-- start of weather widget -->
+                <div class="col-md-4 col-sm-4 ">
+                  <div class="x_panel">
+                    <div class="x_title">
+                      <h2>Temperature</h2>
+                      <ul class="nav navbar-right panel_toolbox">
+                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                        <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              <a class="dropdown-item" href="#">Settings 1</a>
+                              <a class="dropdown-item" href="#">Settings 2</a>
+                            </div>
+                        </li>
+                        <li><a class="close-link"><i class="fa fa-close"></i></a>
+                        </li>
+                      </ul>
+                      <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                      
+                      <div class="col-sm-12">
+                        <div class="weather-text pull-right">
+                          <h3 class="degrees">23</h3>
+                        </div>
+                      </div>
 
-          <div class="row">
+                     
+                      </div>
+                    </div>
+                  </div>
 
-
-            
-
-            <div class="col-md-6 col-sm-5 ">
+                
+                <!-- end of weather widget -->
+</div>
+<div class="col-md-6 col-sm-5 ">
               <div class="x_panel tile">
                 <div class="x_title">
                   <h2>Satisfaction des etudiants</h2>
@@ -827,147 +458,365 @@
               </div>
             </div>
 
-<div class="col-md-3   widget widget_tally_box"> 
-                        <div class="x_panel ui-ribbon-container fixed_height_390">
-                          <div class="ui-ribbon-wrapper">
-                            <div class="ui-ribbon">
-                              30% Off
-                            </div>
-                          </div>
-                          <div class="x_title">
-                            <h2>User Mail</h2>
-                            <div class="clearfix"></div>
-                          </div>
-                          <div class="x_content">
+<div class="row">
+            <div class="col-md-12 col-sm-12 ">
+              <div class="dashboard_graph">
 
-                            <div style="text-align: center; margin-bottom: 17px">
-                              <span class="chart" data-percent="86">
-                                                  <span class="percent"></span>
-                              </span>
-                            </div>
-
-                            <h3 class="name_title">Finance</h3>
-                            <p>Short Description</p>
-
-                            <div class="divider"></div>
-
-                            <p>If you've decided to go in development mode and tweak all of this a bit, there are few things you should do.</p>
-
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-3   widget widget_tally_box"> </div>
-                      
-                      
-                <!-- start of weather widget -->
-                <div class="col-md-6 col-sm-6 ">
-                  <div class="x_panel">
-                    <div class="x_title">
-                      <h2>Daily active users <small>Sessions</small></h2>
-                      <ul class="nav navbar-right panel_toolbox">
-                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                        </li>
-                        <li class="dropdown">
-                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                              <a class="dropdown-item" href="#">Settings 1</a>
-                              <a class="dropdown-item" href="#">Settings 2</a>
-                            </div>
-                        </li>
-                        <li><a class="close-link"><i class="fa fa-close"></i></a>
-                        </li>
-                      </ul>
-                      <div class="clearfix"></div>
+                <div class="row x_title">
+                  <div class="col-md-6">
+                    <h3>Nombre de visites <small>a la bibliotheque</small></h3>
+                  </div>
+                  <div class="col-md-6">
+                    <div id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
+                      <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+                      <span>December 30, 2014 - January 28, 2015</span> <b class="caret"></b>
                     </div>
-                    <div class="x_content">
-                      <div class="row">
-                        <div class="col-sm-12">
-                          <div class="temperature"><b>Monday</b>, 07:30 AM
-                            <span>F</span>
-                            <span><b>C</b></span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-sm-4">
-                          <div class="weather-icon">
-                            <canvas height="84" width="84" id="partly-cloudy-day"></canvas>
-                          </div>
-                        </div>
-                        <div class="col-sm-8">
-                          <div class="weather-text">
-                            <h2>Texas <br><i>Partly Cloudy Day</i></h2>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-12">
-                        <div class="weather-text pull-right">
-                          <h3 class="degrees">23</h3>
-                        </div>
-                      </div>
+                  </div>
+                </div>
 
-                      <div class="clearfix"></div>
+                <div class="col-md-9 col-sm-9 ">
+                  <div id="chart_plot_01" class="demo-placeholder"></div>
+                </div>
+               
 
-                      <div class="row weather-days">
-                        <div class="col-sm-2">
-                          <div class="daily-weather">
-                            <h2 class="day">Mon</h2>
-                            <h3 class="degrees">25</h3>
-                            <canvas id="clear-day" width="32" height="32"></canvas>
-                            <h5>15 <i>km/h</i></h5>
-                          </div>
+                <div class="clearfix"></div>
+              </div>
+            </div>
+
+          </div> <div class="col-md-12">
+ <div class="x_panel" style="">
+
+    <div class="x_title">
+
+        <h2> 	<span class="glyphicon glyphicon-time" aria-hidden="true"style="padding-right: 10px;"></span>Horaires</h2>
+        <ul class="nav navbar-right panel_toolbox">
+        	<button type="button" class="btn btn-info" data-toggle="modal" data-target=".bs-example-modal-lg"> modifier<span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;">
+</button>
+            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Settings 1</a>
+                    </li>
+                    <li><a href="#">Settings 2</a>
+                    </li>
+                </ul>
+            </li>
+            <li><a class="close-link"><i class="fa fa-close"></i></a>
+            </li>
+        </ul>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+  
+        <div class="container">
+            <div class="row">
+
+      
+           
+              
+          
+        
+        <style>
+          
+            
+            th {
+                width: 40px !important;
+                padding-left: 0px !important;
+                padding-right: 0px !important;
+
+            }
+            .table td,
+            {padding: 0px !important;
+            	height: 10px !important;
+
+            }
+        </style>
+        
+        <section class="section">
+            <nav class="level">
+                <div class="level-item">
+                    <div class="field has-addons">
+                        <p class="control">
+                            <a class="button">
+                                <span class="icon"><i class="fas fa-chevron-left"></i></span>
+                            </a>
+                        </p>
+                        <p class="control">
+                            <a class="button">
+                                Semaine du 04/03 au 10/03
+                            </a>
+                        </p>
+                        <p class="control">
+                            <a class="button">
+                                <span class="icon"><i class="fas fa-chevron-right"></i></span>
+                            </a>
+                        </p>
+                    </div>
+
+                </div>
+            </nav>
+            
+            <table class="table" style="overflow-x: auto; display: block;">
+                <thead>
+                    <tr>
+                        <th></th>
+                            <th class="th_hour">08:00</th>
+                            <th ></th>
+                            <th ></th>
+                            <th ></th>
+                            <th class="th_hour">09:00</th>
+                            <th ></th>
+                            <th ></th>
+                            <th ></th>
+                            <th class="th_hour">10:00</th>
+                            <th ></th>
+                            <th ></th>
+                            <th ></th>
+                            <th class="th_hour">11:00</th>
+                            <th ></th>
+                            <th ></th>
+                            <th ></th>
+                            <th class="th_hour">12:00</th>
+                            <th ></th>
+                            <th ></th>
+                            <th ></th>
+                            <th class="th_hour">13:00</th>
+                            <th ></th>
+                            <th ></th>
+                            <th ></th>
+                            <th class="th_hour">14:00</th>
+                            <th ></th>
+                            <th ></th>
+                            <th ></th>
+                            <th class="th_hour">15:00</th>
+                            <th ></th>
+                            <th ></th>
+                            <th ></th>
+                            <th class="th_hour">16:00</th>
+                            <th ></th>
+                            <th ></th>
+                            <th ></th>
+                            <th class="th_hour">17:00</th>
+                            <th ></th>
+                            <th ></th>
+                            <th ></th>
+                            <th class="th_hour">18:00</th>
+                            <th ></th>
+                            <th ></th>
+                            <th ></th>
+                            <th class="th_hour">19:00</th>
+                            <th ></th>
+                            <th ></th>
+                            <th ></th>
+                            <th class="th_hour">20:00</th>
+                            <th ></th>
+                            <th ></th>
+                            <th ></th>
+                            <th class="th_hour">21:00</th><th ></th>
+                            <th ></th>
+                            <th ></th>
+                            <th class="th_hour">22:00</th><th ></th>
+                            <th ></th>
+                            <th ></th>
+                            <th class="th_hour">23:00</th><th ></th>
+                            <th ></th>
+                            <th ></th>
+                            <th class="th_hour">24:00</th>
+                        
+                    </tr>
+                </thead>
+                <tbody><div id="echart_bar_horizontal"></div>
+                            <tr>
+                                <th>Lundi 04/03</th>
+                                
+                                    <td colspan="40">
+                                        
+                                            <article class="tile is-child notification is-primary event">
+                                          
+                                            </article>
+                                        
+                                    </td>
+                            </tr>
+                        
+                    
+                        
+                            <tr>
+                                <th>Mardi 05/03</th>
+                                
+                                     <td colspan="40">
+                                        
+                                            <article class="tile is-child notification is-primary event">
+                                          
+                                            </article>
+                                        
+                                    </td>
+                                
+                            </tr>
+                        
+                    
+                        
+                            <tr>
+                                <th>Mercredi 06/03</th>
+                                
+                                   <td colspan="40">
+                                        
+                                            <article class="tile is-child notification is-primary event">
+                                          
+                                            </article>
+                                        
+                                    </td>
+                                
+                            </tr>
+                        
+                    
+                        
+                            <tr>
+                                <th>Jeudi 07/03</th>
+                                
+                                    <td colspan="40">
+                                        
+                                            <article class="tile is-child notification is-primary event">
+                                          
+                                            </article>
+                                        
+                                    </td>
+                                
+                            </tr>
+                        
+                    
+                        
+                            <tr>
+                                <th>Vendredi 08/03</th>
+                                
+                                    <td colspan="40">
+                                        
+                                            <article class="tile is-child notification is-primary event">
+                                          
+                                            </article>
+                                        
+                                    </td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                <th>Samedi 08/03</th>
+                                
+                                    <td colspan="32">
+                                        
+                                            <article class="tile is-child notification is-primary event">
+                                          
+                                            </article>
+                                        
+                                    </td>
+                            </tr>
+                               <tr>
+                                <th>Dimanche 08/03</th>
+                                
+                                    <td colspan="32">
+                                        
+                                            <article class="tile is-child notification is-primary event">
+                                          
+                                            </article>
+                                        
+                                    </td>
+                            </tr>
+                </tbody>
+            </table>
+        </section></div>
+       
+         <div class="col-md-12">
+      <div class="x_panel">
+                <div class="x_title">
+                  <h2><i class="fa fa-exclamation-circle" style="padding-right: 20px;"></i>Reclamations</h2>
+                  <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <a class="dropdown-item" href="#">Settings 1</a>
+                          <a class="dropdown-item" href="#">Settings 2</a>
                         </div>
-                        <div class="col-sm-2">
-                          <div class="daily-weather">
-                            <h2 class="day">Tue</h2>
-                            <h3 class="degrees">25</h3>
-                            <canvas height="32" width="32" id="rain"></canvas>
-                            <h5>12 <i>km/h</i></h5>
-                          </div>
+                    </li>
+                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                    </li>
+                  </ul>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+
+                  <!-- modals -->
+                  
+                </div>
+              </div>
+     </div>
+    
+ 
+
+                  <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+                    <div class="modal-dialog modal-lg">
+                      <div class="modal-content">
+
+                        <div class="modal-header">
+                         
+                          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                          </button>
                         </div>
-                        <div class="col-sm-2">
-                          <div class="daily-weather">
-                            <h2 class="day">Wed</h2>
-                            <h3 class="degrees">27</h3>
-                            <canvas height="32" width="32" id="snow"></canvas>
-                            <h5>14 <i>km/h</i></h5>
-                          </div>
+
+                        <div class="modal-body">
+                       <div class="col-sm-">
+                    <h2 class="day">Lundi</h2> <small>For 24H format use format: 'HH:mm'</small>
+                    <div class="form-group">
+                        <div class="input-group date" id="myDatepicker3">
+                            <input type="text" class="form-control">
+                            <span class="input-group-addon">
+                               <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
                         </div>
-                        <div class="col-sm-2">
-                          <div class="daily-weather">
-                            <h2 class="day">Thu</h2>
-                            <h3 class="degrees">28</h3>
-                            <canvas height="32" width="32" id="sleet"></canvas>
-                            <h5>15 <i>km/h</i></h5>
-                          </div>
+                    </div>
+                </div><div class="col-sm-3">
+                    Only Time Picker <small>For 24H format use format: 'HH:mm'</small>
+                    <div class="form-group">
+                        <div class="input-group date" id="myDatepicker3">
+                            <input type="text" class="form-control">
+                            <span class="input-group-addon">
+                               <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
                         </div>
-                        <div class="col-sm-2">
-                          <div class="daily-weather">
-                            <h2 class="day">Fri</h2>
-                            <h3 class="degrees">28</h3>
-                            <canvas height="32" width="32" id="wind"></canvas>
-                            <h5>11 <i>km/h</i></h5>
-                          </div>
+                    </div>
+                </div>
+                
+                 <div class="col-sm-3">
+                    Only Time Picker <small>For 24H format use format: 'HH:mm'</small>
+                    <div class="form-group">
+                        <div class="input-group date" id="myDatepicker2">
+                            <input type="text" class="form-control">
+                            <span class="input-group-addon">
+                               <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
                         </div>
-                        <div class="col-sm-2">
-                          <div class="daily-weather">
-                            <h2 class="day">Sat</h2>
-                            <h3 class="degrees">26</h3>
-                            <canvas height="32" width="32" id="cloudy"></canvas>
-                            <h5>10 <i>km/h</i></h5>
-                          </div>
+                    </div>
+                </div>
                         </div>
-                        <div class="clearfix"></div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+
                       </div>
                     </div>
                   </div>
-
-                </div>
-                <!-- end of weather widget -->
-
-
-          </div>
+               
+                
+                
+                
+            </div>
         </div>
+    </div>
+</div>
+
         <!-- /page content -->
 
         <!-- footer content -->
@@ -1049,6 +898,9 @@
     <script src="../vendors/fastclick/lib/fastclick.js"></script>
     <!-- NProgress -->
     <script src="../vendors/nprogress/nprogress.js"></script>
+     <!-- ECharts -->
+    <script src="../vendors/echarts/dist/echarts.min.js"></script>
+    <script src="../vendors/echarts/map/js/world.js"></script>
     <!-- morris.js -->
     <script src="../vendors/raphael/raphael.min.js"></script>
     <script src="../vendors/morris.js/morris.min.js"></script>
