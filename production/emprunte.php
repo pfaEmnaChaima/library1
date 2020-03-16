@@ -312,8 +312,14 @@
                     </div>
                   </div>
                 </div>
+<<<<<<< HEAD
     <div id="userModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
      <div class="modal-dialog" role="document">
+=======
+                <div id="userModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+     <div class="modal-dialog" role="document">
+      <form method="post" id="user_form" enctype="multipart/form-data">
+>>>>>>> b3e2daa206251c3a7ca6ffce612d0ded084368db
        <div class="modal-content">
       <div class="modal-header">
        <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -321,6 +327,7 @@
       </div>
       <div class="modal-body">
        <label>id-Emprunteur</label>
+<<<<<<< HEAD
        <input type="text" name="reference" id="id_emp" class="form-control"  />
        <br />
        <label>id-Livre</label>
@@ -339,12 +346,28 @@
        <input type="text" name="categorie" id="date_retour" class="form-control" />
        <br />
        
+=======
+       <input type="text" name="reference" id="reference" class="form-control"  />
+       <br />
+       <label>Date-Emprunte</label>
+       <input type="text" name="designation" id="designation" class="form-control" />
+       <br />
+        <label>Date-retour</label>
+       <input type="text" name="categorie" id="categorie" class="form-control" />
+       <br />
+       <br />
+        <label>nom-Livre</label>
+       <input type="text" name="quantite" id="quantite" class="form-control" />
+       
+       <br />
+>>>>>>> b3e2daa206251c3a7ca6ffce612d0ded084368db
        
        
       </div>
       <div class="modal-footer">
        <input type="hidden" name="id-Emprunteur" id="id-Emprunteur" />
        <input type="hidden" name="operation" id="operation" />
+<<<<<<< HEAD
       
 
         <button type="button"  data-dismiss="modal" class="btn btn-success" onclick="add()">Add</button>
@@ -390,6 +413,16 @@
      </div>
       </div>
                             <thead>
+=======
+       <input type="submit" name="action" id="action" class="btn btn-success" value="Add" />
+       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+       </div>
+      </form>
+     </div>
+      </div>
+                      <thead>
+>>>>>>> b3e2daa206251c3a7ca6ffce612d0ded084368db
                         <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 80px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">id-Emprunteur</th><th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 135px;" aria-label="Position: activate to sort column ascending">Date-Emprunte</th><th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 59px;" aria-label="Office: activate to sort column ascending">Date-retour</th><th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 25px;" aria-label="Age: activate to sort column ascending">id-Livre</th><th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 52px;" aria-label="Start date: activate to sort column ascending">nom-livre</th><th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 48px;" aria-label="Salary: activate to sort column ascending">Domaine</th></tr>
                       </thead>
                       <tbody>
