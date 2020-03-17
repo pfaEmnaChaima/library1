@@ -375,17 +375,9 @@
       <div class="modal-body">
        
        <label>id-Emprunte</label>
-       <input type="text" name="reference" id="emp" class="form-control"  />
+       <input type="text" name="reference" id="idemp" class="form-control"  />
        <br />
-       <label>id-Livre</label>
-       <input type="text" name="reference" id="id_liv" class="form-control"  />
-       <br />
-        <label>id-Emprunteur</label>
-       <input type="text" name="reference" id="id_emp" class="form-control"  />
-       <br />
-        <label>nom-Livre</label>
-       <input type="text" name="quantite" id="nom_livre" class="form-control" />
-       <br />
+       
             
        
        
@@ -395,7 +387,7 @@
        <input type="hidden" name="operation" id="operation" />
       
 
-        <button type="button"  data-dismiss="modal" class="btn btn-success" onclick="ret()">Return</button>
+        <button type="button"  data-dismiss="modal" class="btn btn-success" onclick="update()">Return</button>
        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
        </div>
        </div>
@@ -420,36 +412,8 @@
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
-          const emp_id=document.getElementById('emp');
         
-          function add() {
-          const a="NotRuturned";
-        const database=firebase.database();
-        const rootRef=database.ref('emprunte');
-        rootRef.child(emp_id.value).set({
-            id_livre:document.getElementById('id_liv').value,
-            id_emprunte:document.getElementById('id_emp').value,
-            date_emp:document.getElementById('date_emp').value,
-            date_retour:document.getElementById('date_retour').value,
-            nom_livre:document.getElementById('nom_livre').value,
-            domaine:document.getElementById('domaine').value,
-            etat:a
-        });
-        }
-
-        function ret() {
-        const a="Ruturned";
-        const database=firebase.database();
-        const rootRef=database.ref('emprunte');
-        const newData ={
-            id_livre:document.getElementById('id_liv').value
-          };
-
-        rootRef.child(emp_id.value).update(newData);
-        
-        }
-
-
+          
 
 </script>
 
@@ -458,6 +422,8 @@
       
       <thead>
          <tr role="row">
+            <th class="sorting_asc" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 80px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">id-Emprunte</th>
+            
             <th class="sorting_asc" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 80px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">id-Livre</th>
 
             <th class="sorting_asc" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 80px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">id-Emprunteur</th>
