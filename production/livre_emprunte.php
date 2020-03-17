@@ -329,13 +329,13 @@
       </div>
       <div class="modal-body">
        <label>id-Emprunte</label>
-       <input type="text" name="reference" id="emp" class="form-control"  />
+       <input type="number" name="reference" id="emp" class="form-control"  />
        <br />
        <label>id-Livre</label>
-       <input type="text" name="reference" id="id_liv" class="form-control"  />
+       <input type="number" name="reference" id="id_liv" class="form-control"  />
        <br />
         <label>id-Emprunteur</label>
-       <input type="text" name="reference" id="id_emp" class="form-control"  />
+       <input type="number" name="reference" id="id_emp" class="form-control"  />
        <br />
         <label>nom-Livre</label>
        <input type="text" name="quantite" id="nom_livre" class="form-control" />
@@ -344,10 +344,10 @@
        <input type="text" name="quantite" id="domaine" class="form-control" />
        <br />
        <label>Date-Emprunte</label>
-       <input type="text" name="designation" id="date_emp" class="form-control" />
+       <input type="date" name="designation" id="date_emp" class="form-control" />
        <br />
         <label>Date-retour</label>
-       <input type="text" name="categorie" id="date_retour" class="form-control" />
+       <input type="date" name="categorie" id="date_retour" class="form-control" />
        <br />
        
        
