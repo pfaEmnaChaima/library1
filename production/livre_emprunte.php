@@ -315,6 +315,8 @@
                   <div class="col-sm-6">
                     <div class="mb-md">
                       <button type="button" id="add_button" data-toggle="modal" data-target="#userModal" class="btn btn-info btn-lg">Ajouter<i class="fa fa-plus" style="padding-left: 20px;"></i></button>
+
+                      <button type="button" id="add_button" data-toggle="modal" data-target="#userModalReturn" class="btn btn-info btn-lg">Return<i class="fa fa-plus" style="padding-left: 20px;"></i></button>
                     </div>
                   </div>
                 </div>
@@ -358,6 +360,48 @@
 
         <button type="button"  data-dismiss="modal" class="btn btn-success" onclick="add()">Add</button>
        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       </div>
+       </div>
+     </div>
+      </div>
+
+      <div id="userModalReturn" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+     <div class="modal-dialog" role="document">
+       <div class="modal-content">
+      <div class="modal-header">
+       <button type="button" class="close" data-dismiss="modal">&times;</button>
+       <h4 class="modal-title" id="myModalLabel" >Retourner une emprunte</h4>
+      </div>
+      <div class="modal-body">
+       
+       <label>id-Emprunte</label>
+       <input type="text" name="reference" id="emp" class="form-control"  />
+       <br />
+       <label>id-Livre</label>
+       <input type="text" name="reference" id="id_liv" class="form-control"  />
+       <br />
+        <label>id-Emprunteur</label>
+       <input type="text" name="reference" id="id_emp" class="form-control"  />
+       <br />
+        <label>nom-Livre</label>
+       <input type="text" name="quantite" id="nom_livre" class="form-control" />
+       <br />
+            
+       
+       
+      </div>
+      <div class="modal-footer">
+       <input type="hidden" name="id-Emprunteur" id="id-Emprunteur" />
+       <input type="hidden" name="operation" id="operation" />
+      
+
+        <button type="button"  data-dismiss="modal" class="btn btn-success" onclick="ret()">Return</button>
+       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       </div>
+       </div>
+     </div>
+      </div>
+
        <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase.js"></script>
 
       <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-database.js"></script>
@@ -379,7 +423,7 @@
           const emp_id=document.getElementById('emp');
         
           function add() {
-
+          const a="NotRuturned";
         const database=firebase.database();
         const rootRef=database.ref('emprunte');
         rootRef.child(emp_id.value).set({
@@ -388,22 +432,30 @@
             date_emp:document.getElementById('date_emp').value,
             date_retour:document.getElementById('date_retour').value,
             nom_livre:document.getElementById('nom_livre').value,
-            domaine:document.getElementById('domaine').value
+            domaine:document.getElementById('domaine').value,
+            etat:a
         });
         }
 
+        function ret() {
+        const a="Ruturned";
+        const database=firebase.database();
+        const rootRef=database.ref('emprunte');
+        const newData ={
+            id_livre:document.getElementById('id_liv').value
+          };
 
+        rootRef.child(emp_id.value).update(newData);
+        
+        }
 
 
 
 </script>
 
   <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
-  <script src="js/emprunte.js"></script>
-      </div>
-       </div>
-     </div>
-      </div>
+  <script src="js/emp.js"></script>
+      
       <thead>
          <tr role="row">
             <th class="sorting_asc" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 80px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">id-Livre</th>
@@ -417,7 +469,9 @@
            <th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 59px;" aria-label="Office: activate to sort column ascending">Date-retour</th>
 
 
-            <th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 52px;" aria-label="Start date: activate to sort column ascending">nom-livre</th>
+            <th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 52px;" aria-label="Start date: activate to sort column ascending">Nom-livre</th>
+
+            <th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 52px;" aria-label="Start date: activate to sort column ascending">Etat</th>
 
             
           </tr>
