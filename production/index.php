@@ -259,8 +259,8 @@
         <div class="right_col" role="main">
           <!-- top tiles -->
           <div class="row" style="display: inline-block;" >
-          <div class="tile_count"style="width: 900px;">
-            <div class="col-md-4 col-sm-4  tile_stats_count" style="padding-left: 50px padding-right: 50px;">
+          <div class="tile_count"style="width: 1200px;">
+            <div class="col-md-3 col-sm-5  tile_stats_count" style="padding-left: 50px padding-right: 50px;">
               <span class="count_top"><i class="fa fa-user"style="padding-right: 10px;"></i>Nombre d'etudiants </span>
               <div class="count">2500</div>
                 <button type="button" class="btn btn-success btn-xs"><a href="contacts.html" style="color: white;">modifier</a><span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;"></span></button>
@@ -268,16 +268,22 @@
             
             
            
-            <div class="col-md-4 col-sm-4  tile_stats_count" style="padding-left: 50px padding-right: 50px;">
+            <div class="col-md-3 col-sm-5  tile_stats_count" style="padding-left: 50px padding-right: 50px;">
               <span class="count_top"><i class="fa fa-books"style="padding-right: 10px;"></i> Nombre de chaises</span>
               <div class="count">100</div>
- <button type="button" class="btn btn-info">modifier<span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;"></span></button>
+              <button type="button" class="btn btn-info">modifier<span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;"></span></button>
               
             </div>
-             <div class="col-md-4 col-sm-4  tile_stats_count" style="padding-left: 50px padding-right: 50px;">
+             <div class="col-md-3 col-sm-3  tile_stats_count" style="padding-left: 50px padding-right: 50px;">
               <span class="count_top"><i class="fa fa-books"style="padding-right: 10px;"></i>Documents </span>
               <div class="count">200</div>
                 <button type="button" class="btn btn-success btn-xs"><a href="emprunte.php" style="color: white;">plus d'infos</a><span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;"></span></button>
+            </div>
+
+            <div class="col-md-3 col-sm-3  tile_stats_count" style="padding-left: 50px padding-right: 50px;">
+              <span class="count_top"><i class="fa fa-books"style="padding-right: 10px;"></i>Livre Emprunte </span>
+              <div class="count">20</div>
+                <button type="button" class="btn btn-success btn-xs"><a href="livre_emprunte.php" style="color: white;">Add</a><span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;"></span></button>
             </div>
              </div>
              <div class="col-md-12">
