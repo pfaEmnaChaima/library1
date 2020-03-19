@@ -8,7 +8,7 @@ var rootRef=firebase.database()	.ref().child("emprunte");
   var date_retour=snap.child("date_retour").val();
   var nom_livre=snap.child("nom_livre").val();
    var etat=snap.child("etat").val();
-  $("#table_body").append("<tr><th>"+ id_emprunte+"</th><th>"+ id_livre+"</th><th>"+id_emprunteur+
+  $("#table_body").append("<td><th>"+ id_emprunte+"</th><th>"+ id_livre+"</th><th>"+id_emprunteur+
   	"</th><th>"+date_emp+"</th><th>"+ date_retour+"</th><th>"+ nom_livre+
   	"</th><th>"+etat+"</th></td>");
 

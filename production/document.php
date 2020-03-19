@@ -266,8 +266,8 @@
         <div class="right_col" role="main">
           <!-- top tiles -->
           <div class="row" style="display: inline-block;" >
-          <div class="tile_count"style="width: 900px;">
-            <div class="col-md-4 col-sm-4  tile_stats_count" style="padding-left: 50px padding-right: 50px;">
+          <div class="tile_count"style="width: 1200px;">
+            <div class="col-md-3 col-sm-3  tile_stats_count" style="padding-left: 50px padding-right: 50px;">
               <span class="count_top"><i class="fa fa-user"style="padding-right: 10px;"></i>Nombre d'etudiants </span>
               <div class="count">2500</div>
                 <button type="button" class="btn btn-success btn-xs"><a href="contacts.html" style="color: white;">modifier</a><span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;"></span></button>
@@ -275,16 +275,21 @@
             
             
            
-            <div class="col-md-4 col-sm-4  tile_stats_count" style="padding-left: 50px padding-right: 50px;">
+            <div class="col-md-3 col-sm-3 tile_stats_count" style="padding-left: 50px padding-right: 50px;">
               <span class="count_top"><i class="fa fa-books"style="padding-right: 10px;"></i> Nombre de chaises</span>
               <div class="count">100</div>
  <button type="button" class="btn btn-info">modifier<span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;"></span></button>
               
             </div>
-             <div class="col-md-4 col-sm-4  tile_stats_count" style="padding-left: 50px padding-right: 50px;">
+             <div class="col-md-3 col-sm-3 tile_stats_count" style="padding-left: 50px padding-right: 50px;">
               <span class="count_top"><i class="fa fa-book"style="padding-right: 10px;"></i>Documents </span>
               <div class="count">200</div>
-                <button type="button" class="btn btn-success btn-xs"><a href="emprunte.php" style="color: white;">plus d'infos</a><span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;"></span></button>
+                <button type="button" class="btn btn-success btn-xs"><a href="document.php" style="color: white;">plus d'infos</a><span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;"></span></button>
+            </div>
+              <div class="col-md-3 col-sm-3  tile_stats_count" style="padding-left: 50px padding-right: 50px;">
+              <span class="count_top"><i class="fa fa-books"style="padding-right: 10px;"></i>Livre Emprunte </span>
+              <div class="count">20</div>
+                <button type="button" class="btn btn-success btn-xs"><a href="livre_emprunte.php" style="color: white;">Add</a><span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;"></span></button>
             </div>
              </div>
           </div>
@@ -339,7 +344,7 @@
        <input type="text" name="prix" id="prix" class="form-control" />
        <br />
         <label>Date entree</label>
-          <fieldset>
+          <fieldset id="date_entree">
                           <div class="control-group">
                             <div class="controls">
                               <div class="col-md-11 xdisplay_inputx form-group row has-feedback">
@@ -359,8 +364,8 @@
        
       </div>
       <div class="modal-footer">
-       <input type="hidden" name="id-Emprunteur" id="id-Emprunteur" />
-       <input type="hidden" name="operation" id="operation" />
+       <input type="hidden" name="nom_doc" id="nom_doc" />
+   
       
 
         <button type="button"  data-dismiss="modal" class="btn btn-success" onclick="add()">Add</button>
@@ -383,110 +388,23 @@
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
-
         
-          function add() {
 
-        const database=firebase.database();
-        const rootRef=database.ref('stockage');
-        const autoId=rootRef.push().key
-        rootRef.child(autoId).set({
-            nom_doc:document.getElementById('nom_doc').value,
-            nom_domain:document.getElementById('nom_domain').value,
-            prix:document.getElementById('prix').value,
-            date_entree:document.getElementById('date_entree').value,
-            qte:document.getElementById('qte').value  ,
-            date_action:document.getElementById('qte').value, 
-            action :document.getElementById('qte').value,
-            nv_qte:document.getElementById('qte').value,
-            anc_qte:document.getElementById('qte').value });
-         
-       
-        }
 
 </script>
+  <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+  <script src="js/doc.js"></script>
       </div>
        </div></form>
      </div>
       </div>
                             <thead>
-                        <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 80px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Nom document</th><th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 135px;" aria-label="Position: activate to sort column ascending">Domaine</th><th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 59px;" aria-label="Office: activate to sort column ascending">Historique</th><th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 25px;" aria-label="Age: activate to sort column ascending">Quantite Disponible</th><th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 52px;" aria-label="Start date: activate to sort column ascending">Date entree</th><th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 48px;" aria-label="Salary: activate to sort column ascending">prix</th></tr>
+                        <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 80px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Nom document</th><th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 135px;" aria-label="Position: activate to sort column ascending">Domaine</th><th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 59px;" aria-label="Office: activate to sort column ascending">action</th><th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 25px;" aria-label="Age: activate to sort column ascending">Quantite Disponible</th><th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 52px;" aria-label="Start date: activate to sort column ascending">Date entree</th><th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 48px;" aria-label="Salary: activate to sort column ascending">prix</th></tr>
                       </thead>
-                      <tbody>
-                     
-                      <tr role="row" class="odd">
-                          <td tabindex="0" class="sorting_1">Airi Satou</td>
-                          <td></td>
-                          <td>Tokyo</td>
-                          <td>33</td>
-                          <td>2008/11/28</td>
-                          <td>$162,700</td>
-                        </tr><tr role="row" class="even">
-                          <td class="sorting_1" tabindex="0">Angelica Ramos</td>
-                          <td>Chief Executive Officer (CEO)</td>
-                          <td>London</td>
-                          <td>47</td>
-                          <td>2009/10/09</td>
-                          <td>$1,200,000</td>
-                        </tr><tr role="row" class="odd">
-                          <td tabindex="0" class="sorting_1">Ashton Cox</td>
-                          <td>Junior Technical Author</td>
-                          <td>San Francisco</td>
-                          <td>66</td>
-                          <td>2009/01/12</td>
-                          <td>$86,000</td>
-                        </tr><tr role="row" class="even">
-                          <td class="sorting_1" tabindex="0">Bradley Greer</td>
-                          <td>Software Engineer</td>
-                          <td>London</td>
-                          <td>41</td>
-                          <td>2012/10/13</td>
-                          <td>$132,000</td>
-                        </tr><tr role="row" class="odd">
-                          <td class="sorting_1" tabindex="0">Brenden Wagner</td>
-                          <td>Software Engineer</td>
-                          <td>San Francisco</td>
-                          <td>28</td>
-                          <td>2011/06/07</td>
-                          <td>$206,850</td>
-                        </tr><tr role="row" class="even">
-                          <td tabindex="0" class="sorting_1">Brielle Williamson</td>
-                          <td>Integration Specialist</td>
-                          <td>New York</td>
-                          <td>61</td>
-                          <td>2012/12/02</td>
-                          <td>$372,000</td>
-                        </tr><tr role="row" class="odd">
-                          <td class="sorting_1" tabindex="0">Bruno Nash</td>
-                          <td>Software Engineer</td>
-                          <td>London</td>
-                          <td>38</td>
-                          <td>2011/05/03</td>
-                          <td>$163,500</td>
-                        </tr><tr role="row" class="even">
-                          <td class="sorting_1" tabindex="0">Caesar Vance</td>
-                          <td>Pre-Sales Support</td>
-                          <td>New York</td>
-                          <td>21</td>
-                          <td>2011/12/12</td>
-                          <td>$106,450</td>
-                        </tr><tr role="row" class="odd">
-                          <td class="sorting_1" tabindex="0">Cara Stevens</td>
-                          <td>Sales Assistant</td>
-                          <td>New York</td>
-                          <td>46</td>
-                          <td>2011/12/06</td>
-                          <td>$145,600</td>
-                        </tr><tr role="row" class="even">
-                          <td tabindex="0" class="sorting_1">Cedric Kelly</td>
-                          <td>Senior Javascript Developer</td>
-                          <td>Edinburgh</td>
-                          <td>22</td>
-                          <td>2012/03/29</td>
-                          <td>$433,060</td>
-                        </tr></tbody>
+                      <tbody id="table_body">
+                     </tbody>
                     </table>
-                  </div></div></div></div></div><div class="dataTables_paginate paging_simple_numbers" id="datatable-buttons_paginate"></div></div>
+                  </div></div></div></div></div></div>
                   </div>
                 </div>
               </div>

@@ -58,7 +58,7 @@
         <div class="col-md-3 left_col menu_fixed mCustomScrollbar _mCS_1 mCS-autoHide" style="overflow: visible;">
           <div class="left_col">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.php" class="site_title"><i class="fa fa-paw"></i> <span>Smart Libray</span></a>
+              <a href="index.php" class="site_title"><i class="fa fa-paw"></i> <span>Smart Libray </span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -80,13 +80,18 @@
             <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
-                <h3>General</h3>
                 <ul class="nav side-menu">
-                  <li><a href="index.php"><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+                  <li ><a ><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                   	<ul class="nav child_menu">
                       <li><a href="index.php">Dashboard</a></li>
                       <li><a href="index2.html">Dashboard2</a></li>
                       <li><a href="index3.html">Dashboard3</a></li>
+                    </ul>
+                  </li>
+                     <li><a><i class="fa fa-edit"></i> Bibliotheque <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li class="mCustomScrollbar mCS-autoHide"style="overflow:visible;">Salle de Lecture</li>
+                      <li><a href="form_advanced.html">Documents</a><i class="fa fa-book"></i></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
@@ -187,7 +192,7 @@
 
                 <li role="presentation" class="nav-item dropdown open">
                   <a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1" data-toggle="dropdown" aria-expanded="false">
-                    <i class="fa fa-envelope-o"></i>
+                    <i class="fa big-icon fa-envelope icon-wrap"></i>
                     <span class="badge bg-green">6</span>
                   </a>
                   <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1">
@@ -268,7 +273,7 @@
             
             
            
-            <div class="col-md-3 col-sm-5  tile_stats_count" style="padding-left: 50px padding-right: 50px;">
+            <div class="col-md-3 col-sm-3  tile_stats_count" style="padding-left: 50px padding-right: 50px;">
               <span class="count_top"><i class="fa fa-books"style="padding-right: 10px;"></i> Nombre de chaises</span>
               <div class="count">100</div>
               <button type="button" class="btn btn-info">modifier<span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;"></span></button>
@@ -277,7 +282,7 @@
              <div class="col-md-3 col-sm-3  tile_stats_count" style="padding-left: 50px padding-right: 50px;">
               <span class="count_top"><i class="fa fa-books"style="padding-right: 10px;"></i>Documents </span>
               <div class="count">200</div>
-                <button type="button" class="btn btn-success btn-xs"><a href="emprunte.php" style="color: white;">plus d'infos</a><span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;"></span></button>
+                <button type="button" class="btn btn-success btn-xs"><a href="document.php" style="color: white;">plus d'infos</a><span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;"></span></button>
             </div>
 
             <div class="col-md-3 col-sm-3  tile_stats_count" style="padding-left: 50px padding-right: 50px;">
