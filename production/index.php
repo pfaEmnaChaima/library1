@@ -748,6 +748,226 @@
             </div>
 
           </div>
+
+          <div class="col-md-12" id="calendrier">
+ <div class="x_panel" style="">
+
+    <div class="x_title">
+
+        <h2>  <span class="glyphicon glyphicon-time" aria-hidden="true"style="padding-right: 10px;"></span>Horaires</h2>
+        <ul class="nav navbar-right panel_toolbox">
+           <div class="row">
+                                           <nav class="level" style="padding-right: 400px; ">
+                <div class="level-item">
+                    <div class="field has-addons">
+                        <p class="control">
+                            <a class="button">
+                                <span class="icon"><i class="fas fa-chevron-left"></i></span>
+                            </a>
+                        </p>
+                        <p class="control">
+                            <a class="button">
+                                <?php echo date('l jS \of F Y ');  ?>
+                            </a>
+                        </p>
+                        <p class="control">
+                            <a class="button">
+                                <span class="icon"><i class="fas fa-chevron-right"></i></span>
+                            </a>
+                        </p>
+                    </div>
+
+                </div>
+            </nav>
+                
+                </div>
+          <button type="button" id="add_button" data-toggle="modal" data-target="#userModal" class="btn btn-info ">modifier<span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;"></span></button>
+            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Settings 1</a>
+                    </li>
+                    <li><a href="#">Settings 2</a>
+                    </li>
+                </ul>
+            </li>
+            <li><a class="close-link"><i class="fa fa-close"></i></a>
+            </li>
+        </ul>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+  
+        <div class="container">
+            <div class="row">
+
+      
+          <!-- <table >
+              
+          
+ 
+        
+           
+        <section class="section">
+            <nav class="level">
+                <div class="level-item">
+                    <div class="field has-addons">
+                        <p class="control">
+                            <a class="button">
+                                <span class="icon"><i class="fas fa-chevron-left"></i></span>
+                            </a>
+                        </p>
+                        <p class="control">
+                            <a class="button">
+                                Semaine du 04/03 au 10/03
+                            </a>
+                        </p>
+                        <p class="control">
+                            <a class="button">
+                                <span class="icon"><i class="fas fa-chevron-right"></i></span>
+                            </a>
+                        </p>
+                    </div>
+
+                </div>
+            </nav>
+              <table id="datatable-buttons" class="table table-striped table-bordered dataTable no-footer dtr-inline" style="width: 100%;" role="grid" aria-describedby="datatable-buttons_info">
+                                        <div class="row">
+                  <div class="col-sm-6">
+                    <div class="mb-md">
+                      <button type="button" id="add_button" data-toggle="modal" data-target="#userModal" class="btn btn-info btn-lg">Ajouter<i class="fa fa-plus" style="padding-left: 20px;"></i></button>
+                    </div>
+                  </div>
+                </div>
+                <div id="userModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                     <div class="modal-dialog" role="document">
+       <form method="post" id="user_form" enctype="multipart/form-data">
+                      <div class="modal-content">
+
+                        <div class="modal-header">
+                             <h4 class="modal-title" id="myModalLabel" >Changer horaires</h4>
+
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+
+                        <div class="modal-body">
+                       <div class="col-sm-4" >
+                  <input type="text" name="" id="jour">
+                </div><div class="col-sm-4">
+                   <input type="time" name="" id="debut">
+                </div>
+                
+                 <div class="col-sm-4">
+                    <input type="time" name="" id="fin">
+                </div>
+                        </div>
+                        <div class="modal-footer">
+                             <input type="hidden" name="jour" id="jour" />
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          <button type="button"data-dismiss="modal" class="btn btn-success" onclick="addh()">Save changes</button>
+                        </div>
+<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase.js"></script>
+
+      <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-database.js"></script>
+
+      <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+              apiKey: "AIzaSyBiUHy07aEruI_ZgBmg-A8ez6bBc-W1gtw",
+              authDomain: "smart-library1.firebaseapp.com",
+              databaseURL: "https://smart-library1.firebaseio.com",
+              projectId: "smart-library1",
+              storageBucket: "smart-library1.appspot.com",
+              messagingSenderId: "215824460430",
+              appId: "1:215824460430:web:6d9b13ab3c7629b377b7df",
+              measurementId: "G-BC9C4EV24W"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        
+
+
+</script>
+  <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+  <script src="js/horaire.js"></script>
+                      </div>
+                    </div>
+                  </div>
+   
+    
+      
+       
+     </form>
+     </div>
+      </div>
+                           
+                    
+          
+                <thead>
+               
+                       <tr><th>jour</th><th>heure debut </th><th>heure fin</th></tr> 
+                    
+                </thead>
+              
+                <tbody id="t_body">
+                </tbody>
+            
+             
+        </section></div></div></table>--><table  class="table table-striped table-bordered dataTable no-footer dtr-inline" style="width: 100%;" role="grid" aria-describedby="datatable-buttons_info">
+                                       
+    <div id="userModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+     <div class="modal-dialog" role="document">
+       <form method="post" id="user_form" enctype="multipart/form-data">
+       <div class="modal-content">
+      <div class="modal-header">
+       <h4 class="modal-title" id="myModalLabel" >Modifier Horaires</h4>
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+       <label>Periode</label><div id="reportrange" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
+                          <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+                          <span>February 22, 2020 - March 22, 2020</span> <b class="caret"></b>
+                        </div>
+                        <label>Jour</label>
+    
+       <select type="dayselect" name="jour" id="jour" class="form-control"  >
+       <option>Lundi</option>
+       <option>Mardi</option>
+        <option>mercredi</option>
+        <option>Jeudi</option>
+        <option>Vendredi</option>
+        <option>Samedi</option>
+        <option>Dimanche</option>
+    </select>
+       <label>Debut AM</label>
+       <input type="time" name="debut" id="debut" class="form-control"  />
+        <br />
+        <label>Fin PM</label>
+        <input type="time" name="fin" id="fin" class="form-control"  />
+        <br />
+      </div>
+      <div class="modal-footer">
+       <input type="hidden" name="jour" id="jour" />
+   
+      
+
+        <button type="button"  data-dismiss="modal" class="btn btn-success" onclick="addh()">Add</button>
+       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       
+  <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+  <script src="js/horaire.js"></script>
+      </div>
+       </div></form>
+     </div>
+      </div>
+                            <thead>
+                        <tr role="row"><th aria-controls="datatable-buttons" rowspan="1"  style="width: 80px;" >Jour</th><th  style="width: 80px;">debut AM</th><th style="width: 80px;" >fin PM</th></tr>
+                      </thead>
+                      <tbody id="table_body">
+                     </tbody>
+                    </table></div></div>
        
          <div class="col-md-12">
       <div class="x_panel">
