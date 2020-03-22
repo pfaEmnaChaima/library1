@@ -259,8 +259,8 @@
         <div class="right_col" role="main">
           <!-- top tiles -->
           <div class="row" style="display: inline-block;" >
-          <div class="tile_count"style="width: 1200px;">
-            <div class="col-md-3 col-sm-5  tile_stats_count" style="padding-left: 50px padding-right: 50px;">
+          <div class="tile_count"style="width: 900px;">
+            <div class="col-md-4 col-sm-4  tile_stats_count" style="padding-left: 50px padding-right: 50px;">
               <span class="count_top"><i class="fa fa-user"style="padding-right: 10px;"></i>Nombre d'etudiants </span>
               <div class="count">2500</div>
                 <button type="button" class="btn btn-success btn-xs"><a href="contacts.html" style="color: white;">modifier</a><span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;"></span></button>
@@ -268,29 +268,23 @@
             
             
            
-            <div class="col-md-3 col-sm-5  tile_stats_count" style="padding-left: 50px padding-right: 50px;">
+            <div class="col-md-4 col-sm-4  tile_stats_count" style="padding-left: 50px padding-right: 50px;">
               <span class="count_top"><i class="fa fa-books"style="padding-right: 10px;"></i> Nombre de chaises</span>
               <div class="count">100</div>
-              <button type="button" class="btn btn-info">modifier<span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;"></span></button>
+ <button type="button" class="btn btn-info">modifier<span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;"></span></button>
               
             </div>
-             <div class="col-md-3 col-sm-3  tile_stats_count" style="padding-left: 50px padding-right: 50px;">
-              <span class="count_top"><i class="fa fa-books"style="padding-right: 10px;"></i>Documents </span>
+             <div class="col-md-4 col-sm-4  tile_stats_count" style="padding-left: 50px padding-right: 50px;">
+              <span class="count_top"><i class="fa fa-book"style="padding-right: 10px;"></i>Documents </span>
               <div class="count">200</div>
                 <button type="button" class="btn btn-success btn-xs"><a href="emprunte.php" style="color: white;">plus d'infos</a><span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;"></span></button>
-            </div>
-
-            <div class="col-md-3 col-sm-3  tile_stats_count" style="padding-left: 50px padding-right: 50px;">
-              <span class="count_top"><i class="fa fa-books"style="padding-right: 10px;"></i>Livre Emprunte </span>
-              <div class="count">20</div>
-                <button type="button" class="btn btn-success btn-xs"><a href="livre_emprunte.php" style="color: white;">Add</a><span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;"></span></button>
             </div>
              </div>
           </div>
         <div class="col-md-12 col-sm-12 ">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2><i  style="padding-right: 20px;"></i>Documents<small>Stockage et empruntes</small></h2>
+                    <h2><i class="fa fa-book" style="padding-right: 20px;"></i>Documents<small>Stockage et empruntes</small></h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -309,15 +303,13 @@
                   <div class="x_content">
                       <div class="row">
                           <div class="col-sm-12">
-                          <div class="card-box table-responsive">
-                          <div id="datatable-buttons_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap no-footer">
-                            <table id="datatable-buttons" class="table table-striped table-bordered dataTable no-footer dtr-inline" style="width: 100%;" role="grid" aria-describedby="datatable-buttons_info">
+                            <div class="card-box table-responsive">
+                                       <div id="datatable-buttons_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap no-footer">
+                                    <table id="datatable-buttons" class="table table-striped table-bordered dataTable no-footer dtr-inline" style="width: 100%;" role="grid" aria-describedby="datatable-buttons_info">
                                         <div class="row">
                   <div class="col-sm-6">
                     <div class="mb-md">
                       <button type="button" id="add_button" data-toggle="modal" data-target="#userModal" class="btn btn-info btn-lg">Ajouter<i class="fa fa-plus" style="padding-left: 20px;"></i></button>
-
-                      <button type="button" id="add_button" data-toggle="modal" data-target="#userModalReturn" class="btn btn-info btn-lg">Return<i class="fa fa-plus" style="padding-left: 20px;"></i></button>
                     </div>
                   </div>
                 </div>
@@ -329,12 +321,11 @@
        <h4 class="modal-title" id="myModalLabel" >Ajouter une emprunte</h4>
       </div>
       <div class="modal-body">
-       
+       <label>id-Emprunteur</label>
+       <input type="text" name="reference" id="id_emp" class="form-control"  />
+       <br />
        <label>id-Livre</label>
        <input type="text" name="reference" id="id_liv" class="form-control"  />
-       <br />
-        <label>id-Emprunteur</label>
-       <input type="text" name="reference" id="id_emp" class="form-control"  />
        <br />
         <label>nom-Livre</label>
        <input type="text" name="quantite" id="nom_livre" class="form-control" />
@@ -342,7 +333,13 @@
         <label>domaine</label>
        <input type="text" name="quantite" id="domaine" class="form-control" />
        <br />
-             
+       <label>Date-Emprunte</label>
+       <input type="text" name="designation" id="date_emp" class="form-control" />
+       <br />
+        <label>Date-retour</label>
+       <input type="text" name="categorie" id="date_retour" class="form-control" />
+       <br />
+       
        
        
       </div>
@@ -353,47 +350,6 @@
 
         <button type="button"  data-dismiss="modal" class="btn btn-success" onclick="add()">Add</button>
        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-       </div>
-       </div>
-     </div>
-      </div>
-
-      <div id="userModalReturn" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-     <div class="modal-dialog" role="document">
-       <div class="modal-content">
-      <div class="modal-header">
-       <button type="button" class="close" data-dismiss="modal">&times;</button>
-       <h4 class="modal-title" id="myModalLabel" >Retourner une emprunte</h4>
-      </div>
-      <div class="modal-body">
-       
-       <label>id-Emprunte</label>
-       <input type="text" name="reference" id="idemp" class="form-control"  />
-       <br />
-       
-       <label>id-Emprunteur</label>
-       <input type="text"  id="ide" class="form-control"  />
-       <br />
-
-       <label>id-livre</label>
-       <input type="text"  id="idl" class="form-control"  />
-       <br /> 
-            
-       
-       
-      </div>
-      <div class="modal-footer">
-       <input type="hidden" name="id-Emprunteur" id="id-Emprunteur" />
-       <input type="hidden" name="operation" id="operation" />
-      
-
-        <button type="button"  data-dismiss="modal" class="btn btn-success" onclick="update()">Return</button>
-       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-       </div>
-       </div>
-     </div>
-      </div>
-
        <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase.js"></script>
 
       <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-database.js"></script>
@@ -412,205 +368,104 @@
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
+
         
-        function reload_page(){
-   window.location.reload();
-  }
+          function add() {
 
-
-function update() {
-  var id_livre= document.getElementById('idl').value;
-  var id_etudiant=document.getElementById('ide').value;
-  const empd=document.getElementById('idemp').value;
-  const database=firebase.database();
-  var stockage = firebase.database().ref().child('stockage');
-  var etudiant = firebase.database().ref().child('etudiants');
-
-  var e=firebase.database().ref().child('emprunte/');
-
-  e.on('child_added',function(snapshot){
-    id=snapshot.key;
-    if(id==empd){
-      var ch=firebase.database().ref('emprunte/' + empd).child("etat");
-      var etat;
-      ch.on('value', function(sna) {
-              var etat_dispo = sna.val();  
-              etat=etat_dispo;}); 
-            console.log(etat) ;
-        if(etat!="Returned"){      
-      etudiant.orderByChild('id').equalTo(id_etudiant).on('child_added', function(snap) {
-          var reff=firebase.database().ref('etudiants/' + id_etudiant).child("nb_emp");
-          var b;        var a;
-          reff.on('value', function(snaps) {
-                var nbemp = snaps.val();
-                b=nbemp+1});
-
-          stockage.orderByChild('id').equalTo(id_livre).on('child_added', function(snap) {
-          var ref=firebase.database().ref('stockage/' + id_livre).child("Qte");
-          ref.on('value', function(snapshot) {
-              var uid = snapshot.val();          
-              a=uid+1;
-                });
-
-                                console.log(id);
-                              etat="Returned";
-                              path='emprunte/'+ empd;
-                                
-                                const newData ={ etat
-                                  }
-
-                                database.ref(path).update(newData);
-
-                               var data = {Qte: a  }
-                                path='stockage/'+ id_livre;
-                                firebase.database().ref(path).update(data);
-
-                                    var datanew = { nb_emp: b }
-                                    path='etudiants/'+ id_etudiant;
-                                      firebase.database().ref(path).update(datanew);
-                                      reload_page();
-                           });
-   });
-        } 
-        else {
-          Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: "le livre est retourne",
-                        });
-        }
-      } });
-       }
-   
-function add(){
-
-var d=new Date();
-          var d1=new Date();
-          var d2=d1.addDays(14);
-         var date_emp = d.getDate()+'/'+(d.getMonth()+1)+'/'+d.getFullYear();
-         var date_ret = d2.getDate()+'/'+(d2.getMonth()+1)+'/'+d2.getFullYear();
-
-  var id_livre= document.getElementById('id_liv').value;
-  var id_etudiant=document.getElementById('id_emp').value;
-  var stockage = firebase.database().ref().child('stockage');
-  var etudiant = firebase.database().ref().child('etudiants');
-    var ok=false;
-
-
-
-    etudiant.orderByChild('id').equalTo(id_etudiant).on('child_added', function(snap) {
-      var reff=firebase.database().ref('etudiants/' + id_etudiant).child("nb_emp");
-          var b;
-          reff.on('value', function(snaps) {
-              var nbemp = snaps.val();
-              b=nbemp});
-            if(b==0)  {
-                   Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: "le nombre de possibilite etudiants egale 0",
-                        });}
-            else if((b==1)||(b==2)){
-                b=b-1;
-                ok=true;
-            }
-            
-
-      if(ok==true){
-      stockage.orderByChild('id').equalTo(id_livre).on('child_added', function(snap) {
-          var ref=firebase.database().ref('stockage/' + id_livre).child("Qte");
-          var a;
-          ref.on('value', function(snapshot) {
-              var uid = snapshot.val();          
-              a=uid;
-                });
-             if(a==1){
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: "le nombre de livres disponibles egale à 1",
-                        });
-              }
-
-
-            else  if(a>1){
-                a=a-1;
-
-                var ud = firebase.database().ref().child('emprunte').push().key;
-   
-              var daata = {
-            emp_id:ud,
+        const database=firebase.database();
+        const rootRef=database.ref('emprunte');
+        const autoId=rootRef.push().key
+        rootRef.child(autoId).set({
             id_livre:document.getElementById('id_liv').value,
-            id_emprunteur:document.getElementById('id_emp').value,
-            date_emp:date_emp,
-            date_retour:date_ret,
+            id_emprunte:document.getElementById('id_emp').value,
+            date_emp:document.getElementById('date_emp').value,
+            date_retour:document.getElementById('date_retour').value,
             nom_livre:document.getElementById('nom_livre').value,
-            domaine:document.getElementById('domaine').value,
-            etat:"notReturned"  }
-   
-                var updatess = {};
-                      updatess['/emprunte/' + ud] = daata;
-                          firebase.database().ref().update(updatess);
-   
-  
-              
-              
-             console.log(a);
-
-                var data = { Qte : a  }
-                  path='stockage/'+ id_livre;
-               firebase.database().ref(path).update(data);
-
-            var datanew = { nb_emp: b }
-                  path='etudiants/'+ id_etudiant;
-               firebase.database().ref(path).update(datanew);}
-
-           });
-  }
-
-
-  });
-           }
-
-
- function reload_page(){
-   window.location.reload();
-  }
+            domaine:document.getElementById('domaine').value
+        });
+        }
 
 </script>
-
-  <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
-  <script src="js/emprunte.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-
-      
-      <thead >
-         <tr role="row">
-            
-            
-            <th class="sorting_asc" tabindex="0"  rowspan="1" colspan="1" style="width: 120px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">id-Emprunte</th>
-            
-            <th class="sorting_asc" tabindex="0"  rowspan="1" colspan="1" style="width: 100px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">id-Livre</th>
-
-            <th class="sorting_asc" tabindex="0"  rowspan="1" colspan="1" style="width: 110px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">id-Emprunteur</th>
-
-            <!-- <th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 60px;" aria-label="Position: activate to sort column ascending">Nom-Emprunteur</th> -->
-
-            <th class="sorting" tabindex="0"  rowspan="1" colspan="1" style="width: 50px;" aria-label="Office: activate to sort column ascending">Date-Emprunte</th>         
-
-           <th class="sorting" tabindex="0"  rowspan="1" colspan="1" style="width: 50px;" aria-label="Office: activate to sort column ascending">Date-retour</th>
-
-
-            <th class="sorting" tabindex="0"  rowspan="1" colspan="1" style="width: 52px;" aria-label="Start date: activate to sort column ascending">Nom-livre</th>
-
-            <th class="sorting" tabindex="0"  rowspan="1" colspan="1" style="width: 52px;" aria-label="Start date: activate to sort column ascending">Etat</th>
-
-            
-          </tr>
+      </div>
+       </div>
+     </div>
+      </div>
+                            <thead>
+                        <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 80px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">id-Emprunteur</th><th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 135px;" aria-label="Position: activate to sort column ascending">Date-Emprunte</th><th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 59px;" aria-label="Office: activate to sort column ascending">Date-retour</th><th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 25px;" aria-label="Age: activate to sort column ascending">id-Livre</th><th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 52px;" aria-label="Start date: activate to sort column ascending">nom-livre</th><th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 48px;" aria-label="Salary: activate to sort column ascending">Domaine</th></tr>
                       </thead>
-                      <tbody >
+                      <tbody>
                      
-                      </tbody>
+                      <tr role="row" class="odd">
+                          <td tabindex="0" class="sorting_1">Airi Satou</td>
+                          <td></td>
+                          <td>Tokyo</td>
+                          <td>33</td>
+                          <td>2008/11/28</td>
+                          <td>$162,700</td>
+                        </tr><tr role="row" class="even">
+                          <td class="sorting_1" tabindex="0">Angelica Ramos</td>
+                          <td>Chief Executive Officer (CEO)</td>
+                          <td>London</td>
+                          <td>47</td>
+                          <td>2009/10/09</td>
+                          <td>$1,200,000</td>
+                        </tr><tr role="row" class="odd">
+                          <td tabindex="0" class="sorting_1">Ashton Cox</td>
+                          <td>Junior Technical Author</td>
+                          <td>San Francisco</td>
+                          <td>66</td>
+                          <td>2009/01/12</td>
+                          <td>$86,000</td>
+                        </tr><tr role="row" class="even">
+                          <td class="sorting_1" tabindex="0">Bradley Greer</td>
+                          <td>Software Engineer</td>
+                          <td>London</td>
+                          <td>41</td>
+                          <td>2012/10/13</td>
+                          <td>$132,000</td>
+                        </tr><tr role="row" class="odd">
+                          <td class="sorting_1" tabindex="0">Brenden Wagner</td>
+                          <td>Software Engineer</td>
+                          <td>San Francisco</td>
+                          <td>28</td>
+                          <td>2011/06/07</td>
+                          <td>$206,850</td>
+                        </tr><tr role="row" class="even">
+                          <td tabindex="0" class="sorting_1">Brielle Williamson</td>
+                          <td>Integration Specialist</td>
+                          <td>New York</td>
+                          <td>61</td>
+                          <td>2012/12/02</td>
+                          <td>$372,000</td>
+                        </tr><tr role="row" class="odd">
+                          <td class="sorting_1" tabindex="0">Bruno Nash</td>
+                          <td>Software Engineer</td>
+                          <td>London</td>
+                          <td>38</td>
+                          <td>2011/05/03</td>
+                          <td>$163,500</td>
+                        </tr><tr role="row" class="even">
+                          <td class="sorting_1" tabindex="0">Caesar Vance</td>
+                          <td>Pre-Sales Support</td>
+                          <td>New York</td>
+                          <td>21</td>
+                          <td>2011/12/12</td>
+                          <td>$106,450</td>
+                        </tr><tr role="row" class="odd">
+                          <td class="sorting_1" tabindex="0">Cara Stevens</td>
+                          <td>Sales Assistant</td>
+                          <td>New York</td>
+                          <td>46</td>
+                          <td>2011/12/06</td>
+                          <td>$145,600</td>
+                        </tr><tr role="row" class="even">
+                          <td tabindex="0" class="sorting_1">Cedric Kelly</td>
+                          <td>Senior Javascript Developer</td>
+                          <td>Edinburgh</td>
+                          <td>22</td>
+                          <td>2012/03/29</td>
+                          <td>$433,060</td>
+                        </tr></tbody>
                     </table>
                   </div></div></div></div></div><div class="dataTables_paginate paging_simple_numbers" id="datatable-buttons_paginate"></div></div>
                   </div>

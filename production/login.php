@@ -95,6 +95,7 @@
   <script src="vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
   <script src="js/loginn.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
 </body>
 </html>

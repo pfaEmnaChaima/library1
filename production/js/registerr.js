@@ -15,20 +15,31 @@ function createUser() {
         firebase.auth().createUserWithEmailAndPassword(email,password).then(
             function () {
                 //this function executes when account is successfully created
-                window.location="login.php";
+                window.location="home.php";
 
         }).catch(function (error) {
            //this function handles errors
             var errorMessage=error.message;
-            alert(errorMessage);
+            Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: errorMessage,
+                        });
+  
         });
+
 
     }
     else
     {
         //alert when password did not matches
-        alert("password does not matches");
-
+        Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: "password does not matches!",
+                        });
+  
     }
+
 
 }
