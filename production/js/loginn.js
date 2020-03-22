@@ -14,10 +14,6 @@ function loginUser() {
     }).catch(function (error) {
        //this will handle error
         var errorMessage=error.message;
-Swal.fire({
-  icon: 'error',
-  title: 'Oops...',
-  text: errorMessage,
-});
+        alert(errorMessage);
     });
 }

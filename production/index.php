@@ -7,13 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" href="images/favicon.ico" type="image/ico" />
-
+    <link href="css/font-awesome.min.css" rel="stylesheet">
         
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
         <!-- TODO: Se passer de FontAwesome. -->
         <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <title>Smart Library </title>
-
+<link rel="stylesheet" type="text/css" href="css/sidebarcss.css">
     <!-- Bootstrap -->
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -50,6 +50,14 @@
 
     <!-- Custom Theme Style -->
     <link href="../build/css/custom.min.css" rel="stylesheet">
+               <link rel="stylesheet" type="text/css" href="css/nav.css">
+
+<style type="text/css">
+  html {
+  scroll-behavior: smooth;
+}
+</style>
+
   </head>
 
   <body class="nav-md">
@@ -58,7 +66,7 @@
         <div class="col-md-3 left_col menu_fixed mCustomScrollbar _mCS_1 mCS-autoHide" style="overflow: visible;">
           <div class="left_col">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.php" class="site_title"><i class="fa fa-paw"></i> <span>Smart Libray</span></a>
+              <a href="index.php" class="site_title"><i class="fa fa-paw"></i> <span>Smart Libray </span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -80,15 +88,35 @@
             <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
-                <h3>General</h3>
                 <ul class="nav side-menu">
-                  <li><a href="index.php"><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+                  <li ><a ><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                   	<ul class="nav child_menu">
                       <li><a href="index.php">Dashboard</a></li>
                       <li><a href="index2.html">Dashboard2</a></li>
                       <li><a href="index3.html">Dashboard3</a></li>
                     </ul>
                   </li>
+                  <li><a><i class="fa fa-edit"></i> Bibliotheque <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a><strong>Salle de Lecture</strong> <i class="fa fa-plus"></i></a>
+                      <ul id="fct" class="nav child_menu">
+                      <li><a href="#etat">Etat</a></li>
+                      <li><a href="#calendrier">Regles</a></li>
+
+                    </ul>
+                  </li>
+                      <li><a><strong>Librairie</strong> <i class="fa fa-plus"></i></a>
+                      <ul id="fct" class="nav child_menu">
+                      <li><a href="document.php">Documents</a></li>
+                      <li><a href="livre_emprunte.php">Empruntes</a></li>
+
+                 
+                    </ul>
+                  </li>
+                      
+                    </ul>
+                  </li>
+            
                   <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="form.html">General Form</a></li>
@@ -187,7 +215,7 @@
 
                 <li role="presentation" class="nav-item dropdown open">
                   <a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1" data-toggle="dropdown" aria-expanded="false">
-                    <i class="fa fa-envelope-o"></i>
+                    <i class="fa big-icon fa-envelope icon-wrap"></i>
                     <span class="badge bg-green">6</span>
                   </a>
                   <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1">
@@ -261,32 +289,328 @@
           <div class="row" style="display: inline-block;" >
           <div class="tile_count"style="width: 1200px;">
             <div class="col-md-3 col-sm-5  tile_stats_count" style="padding-left: 50px padding-right: 50px;">
-              <span class="count_top"><i class="fa fa-user"style="padding-right: 10px;"></i>Nombre d'etudiants </span>
-              <div class="count">2500</div>
+              <span class="count_top"><i class="fa fa-user" aria-hidden="true" style="margin-right: 10px;"></i>Nombre d'etudiants </span>
+              <div class="count" id="nb_etud"></div>
                 <button type="button" class="btn btn-success btn-xs"><a href="contacts.html" style="color: white;">modifier</a><span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;"></span></button>
             </div>
             
             
            
-            <div class="col-md-3 col-sm-5  tile_stats_count" style="padding-left: 50px padding-right: 50px;">
-              <span class="count_top"><i class="fa fa-books"style="padding-right: 10px;"></i> Nombre de chaises</span>
-              <div class="count">100</div>
+            <div class="col-md-3 col-sm-3  tile_stats_count" style="padding-left: 50px padding-right: 50px;">
+              <span class="count_top"><i class="fas fa-chair"  style="margin-right: 10px;"></i> Nombre de chaises</span>
+              <div class="count" id="nb_chaises"></div>
               <button type="button" class="btn btn-info">modifier<span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;"></span></button>
               
             </div>
              <div class="col-md-3 col-sm-3  tile_stats_count" style="padding-left: 50px padding-right: 50px;">
-              <span class="count_top"><i class="fa fa-books"style="padding-right: 10px;"></i>Documents </span>
-              <div class="count">200</div>
-                <button type="button" class="btn btn-success btn-xs"><a href="emprunte.php" style="color: white;">plus d'infos</a><span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;"></span></button>
+              <span class="count_top"><i class="fa fa-books"style="margin-right: 10px;" ></i>Documents </span>
+              <div class="count" id="document"></div>
+                <button type="button" class="btn btn-success btn-xs"><a href="document.php" style="color: white;">plus d'infos</a><span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;"></span></button>
             </div>
 
             <div class="col-md-3 col-sm-3  tile_stats_count" style="padding-left: 50px padding-right: 50px;">
               <span class="count_top"><i class="fa fa-books"style="padding-right: 10px;"></i>Livre Emprunte </span>
-              <div class="count">20</div>
+              <div class="count" id="liv_emp"></div>
                 <button type="button" class="btn btn-success btn-xs"><a href="livre_emprunte.php" style="color: white;">Add</a><span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;"></span></button>
             </div>
              </div>
-             <div class="col-md-12">
+              <div class="col-md-12" id="calendrier">
+ <div class="x_panel" style="">
+
+    <div class="x_title">
+
+        <h2>  <span class="glyphicon glyphicon-time" aria-hidden="true"style="padding-right: 10px;"></span>Horaires</h2>
+        <ul class="nav navbar-right panel_toolbox">
+           <div class="row">
+                                           <nav class="level" style="padding-right: 400px; ">
+                <div class="level-item">
+                    <div class="field has-addons">
+                        <p class="control">
+                            <a class="button">
+                                <span class="icon"><i class="fas fa-chevron-left"></i></span>
+                            </a>
+                        </p>
+                        <p class="control">
+                            <a class="button">
+                                <?php echo date('l jS \of F Y ');  ?>
+                            </a>
+                        </p>
+                        <p class="control">
+                            <a class="button">
+                                <span class="icon"><i class="fas fa-chevron-right"></i></span>
+                            </a>
+                        </p>
+                    </div>
+
+                </div>
+            </nav>
+                
+                </div>
+          <button type="button" id="add_button" data-toggle="modal" data-target="#userModal" class="btn btn-info ">modifier<span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;"></span></button>
+            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Settings 1</a>
+                    </li>
+                    <li><a href="#">Settings 2</a>
+                    </li>
+                </ul>
+            </li>
+            <li><a class="close-link"><i class="fa fa-close"></i></a>
+            </li>
+        </ul>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+  
+        <div class="container">
+            <div class="row">
+
+      
+          <!-- <table >
+              
+          
+ 
+        
+           
+        <section class="section">
+            <nav class="level">
+                <div class="level-item">
+                    <div class="field has-addons">
+                        <p class="control">
+                            <a class="button">
+                                <span class="icon"><i class="fas fa-chevron-left"></i></span>
+                            </a>
+                        </p>
+                        <p class="control">
+                            <a class="button">
+                                Semaine du 04/03 au 10/03
+                            </a>
+                        </p>
+                        <p class="control">
+                            <a class="button">
+                                <span class="icon"><i class="fas fa-chevron-right"></i></span>
+                            </a>
+                        </p>
+                    </div>
+
+                </div>
+            </nav>
+              <table id="datatable-buttons" class="table table-striped table-bordered dataTable no-footer dtr-inline" style="width: 100%;" role="grid" aria-describedby="datatable-buttons_info">
+                                        <div class="row">
+                  <div class="col-sm-6">
+                    <div class="mb-md">
+                      <button type="button" id="add_button" data-toggle="modal" data-target="#userModal" class="btn btn-info btn-lg">Ajouter<i class="fa fa-plus" style="padding-left: 20px;"></i></button>
+                    </div>
+                  </div>
+                </div>
+                <div id="userModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                     <div class="modal-dialog" role="document">
+       <form method="post" id="user_form" enctype="multipart/form-data">
+                      <div class="modal-content">
+
+                        <div class="modal-header">
+                             <h4 class="modal-title" id="myModalLabel" >Changer horaires</h4>
+
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+
+                        <div class="modal-body">
+                       <div class="col-sm-4" >
+                  <input type="text" name="" id="jour">
+                </div><div class="col-sm-4">
+                   <input type="time" name="" id="debut">
+                </div>
+                
+                 <div class="col-sm-4">
+                    <input type="time" name="" id="fin">
+                </div>
+                        </div>
+                        <div class="modal-footer">
+                             <input type="hidden" name="jour" id="jour" />
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          <button type="button"data-dismiss="modal" class="btn btn-success" onclick="addh()">Save changes</button>
+                        </div>
+<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase.js"></script>
+
+      <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-database.js"></script>
+
+      <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+              apiKey: "AIzaSyBiUHy07aEruI_ZgBmg-A8ez6bBc-W1gtw",
+              authDomain: "smart-library1.firebaseapp.com",
+              databaseURL: "https://smart-library1.firebaseio.com",
+              projectId: "smart-library1",
+              storageBucket: "smart-library1.appspot.com",
+              messagingSenderId: "215824460430",
+              appId: "1:215824460430:web:6d9b13ab3c7629b377b7df",
+              measurementId: "G-BC9C4EV24W"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        
+
+
+</script>
+  <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+  <script src="js/horaire.js"></script>
+                      </div>
+                    </div>
+                  </div>
+   
+    
+      
+       
+     </form>
+     </div>
+      </div>
+                           
+                    
+          
+                <thead>
+               
+                       <tr><th>jour</th><th>heure debut </th><th>heure fin</th></tr> 
+                    
+                </thead>
+              
+                <tbody id="t_body">
+                </tbody>
+            
+             
+        </section></div></div></table>--><table  class="table table-striped table-bordered dataTable no-footer dtr-inline" style="width: 100%;" role="grid" aria-describedby="datatable-buttons_info">
+                                       
+    <div id="userModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+     <div class="modal-dialog" role="document">
+       <form method="post" id="user_form" enctype="multipart/form-data">
+       <div class="modal-content">
+      <div class="modal-header">
+       <h4 class="modal-title" id="myModalLabel" >Modifier Horaires</h4>
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+       <label>Periode</label><div id="reportrange" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
+                          <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+                          <span>February 22, 2020 - March 22, 2020</span> <b class="caret"></b>
+                        </div>
+                        <label>Jour</label>
+    
+       <select type="dayselect" name="jour" id="jour" class="form-control"  >
+       <option>Lundi</option>
+       <option>Mardi</option>
+        <option>mercredi</option>
+        <option>Jeudi</option>
+        <option>Vendredi</option>
+        <option>Samedi</option>
+        <option>Dimanche</option>
+    </select>
+       <label>Debut AM</label>
+       <input type="time" name="debut" id="debut" class="form-control"  />
+        <br />
+        <label>Fin PM</label>
+        <input type="time" name="fin" id="fin" class="form-control"  />
+        <br />
+      </div>
+      <div class="modal-footer">
+       <input type="hidden" name="jour" id="jour" />
+   
+      
+
+        <button type="button"  data-dismiss="modal" class="btn btn-success" onclick="addh()">Add</button>
+       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase.js"></script>
+
+      <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-database.js"></script>
+
+      <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+              apiKey: "AIzaSyBiUHy07aEruI_ZgBmg-A8ez6bBc-W1gtw",
+              authDomain: "smart-library1.firebaseapp.com",
+              databaseURL: "https://smart-library1.firebaseio.com",
+              projectId: "smart-library1",
+              storageBucket: "smart-library1.appspot.com",
+              messagingSenderId: "215824460430",
+              appId: "1:215824460430:web:6d9b13ab3c7629b377b7df",
+              measurementId: "G-BC9C4EV24W"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        
+
+
+</script>
+  <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+  <script src="js/horaire.js"></script>
+      </div>
+       </div></form>
+     </div>
+      </div>
+                            <thead>
+                        <tr role="row"><th aria-controls="datatable-buttons" rowspan="1"  style="width: 80px;" >Jour</th><th  style="width: 80px;">debut AM</th><th style="width: 80px;" >fin PM</th></tr>
+                      </thead>
+                      <tbody id="table_body">
+                     </tbody>
+                    </table></div></div>
+           <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+       <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase.js"></script>
+
+      <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-database.js"></script>
+
+      <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+              apiKey: "AIzaSyBiUHy07aEruI_ZgBmg-A8ez6bBc-W1gtw",
+              authDomain: "smart-library1.firebaseapp.com",
+              databaseURL: "https://smart-library1.firebaseio.com",
+              projectId: "smart-library1",
+              storageBucket: "smart-library1.appspot.com",
+              messagingSenderId: "215824460430",
+              appId: "1:215824460430:web:6d9b13ab3c7629b377b7df",
+              measurementId: "G-BC9C4EV24W"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        
+        function reload_page(){
+   window.location.reload();
+  }
+ var nb_etud=firebase.database().ref('biblio/').child("nb_etud");
+      nb_etud.on('value', function(sna) {
+              var etat_dispo = sna.val();  
+              $("#nb_etud").append("<div>"+ etat_dispo+"</div>");
+            }); 
+
+   var nb_ch=firebase.database().ref('biblio/').child("nb_chaise");
+      nb_ch.on('value', function(sna) {
+              var etat_dispo = sna.val();  
+              $("#nb_chaises").append("<div>"+ etat_dispo+"</div>");
+            });
+
+       var doc=firebase.database().ref('biblio/').child("document");
+      doc.on('value', function(sna) {
+              var etat_dispo = sna.val();  
+              $("#document").append("<div>"+ etat_dispo+"</div>");
+            });
+
+       var liv_emp=firebase.database().ref('biblio/').child("liv_emp");
+      liv_emp.on('value', function(sna) {
+              var etat_dispo = sna.val();  
+              $("#liv_emp").append("<div>"+ etat_dispo+"</div>");
+            });
+
+      var temp=firebase.database().ref('biblio/').child("temp");
+      temp.on('value', function(sna) {
+              var etat_dispo = sna.val();  
+              $("#temp").append("<h3>"+ etat_dispo+" °"+"</h3>");
+            });
+          </script>
+  <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+  <script src="js/horaire.js"></script>
+             <div class="col-md-12" id="etat">
              	  <div class="col-md-4">
                 <div class="x_panel">
                   <div class="x_title">
@@ -377,7 +701,7 @@
                       
                       <div class="col-sm-12">
                         <div class="weather-text pull-right">
-                          <h3 class="degrees">23</h3>
+                          <h3  id="temp"></h3>
                         </div>
                       </div>
 
@@ -489,248 +813,7 @@
               </div>
             </div>
 
-          </div> <div class="col-md-12">
- <div class="x_panel" style="">
-
-    <div class="x_title">
-
-        <h2> 	<span class="glyphicon glyphicon-time" aria-hidden="true"style="padding-right: 10px;"></span>Horaires</h2>
-        <ul class="nav navbar-right panel_toolbox">
-        	<button type="button" class="btn btn-info" data-toggle="modal" data-target=".bs-example-modal-lg"> modifier<span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;">
-</button>
-            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-            </li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Settings 1</a>
-                    </li>
-                    <li><a href="#">Settings 2</a>
-                    </li>
-                </ul>
-            </li>
-            <li><a class="close-link"><i class="fa fa-close"></i></a>
-            </li>
-        </ul>
-        <div class="clearfix"></div>
-    </div>
-    <div class="x_content">
-  
-        <div class="container">
-            <div class="row">
-
-      
-           
-              
-          
-        
-        <style>
-          
-            
-            th {
-                width: 40px !important;
-                padding-left: 0px !important;
-                padding-right: 0px !important;
-
-            }
-            .table td,
-            {padding: 0px !important;
-            	height: 10px !important;
-
-            }
-        </style>
-        
-        <section class="section">
-            <nav class="level">
-                <div class="level-item">
-                    <div class="field has-addons">
-                        <p class="control">
-                            <a class="button">
-                                <span class="icon"><i class="fas fa-chevron-left"></i></span>
-                            </a>
-                        </p>
-                        <p class="control">
-                            <a class="button">
-                                Semaine du 04/03 au 10/03
-                            </a>
-                        </p>
-                        <p class="control">
-                            <a class="button">
-                                <span class="icon"><i class="fas fa-chevron-right"></i></span>
-                            </a>
-                        </p>
-                    </div>
-
-                </div>
-            </nav>
-            
-            <table class="table" style="overflow-x: auto; display: block;">
-                <thead>
-                    <tr>
-                        <th></th>
-                            <th class="th_hour">08:00</th>
-                            <th ></th>
-                            <th ></th>
-                            <th ></th>
-                            <th class="th_hour">09:00</th>
-                            <th ></th>
-                            <th ></th>
-                            <th ></th>
-                            <th class="th_hour">10:00</th>
-                            <th ></th>
-                            <th ></th>
-                            <th ></th>
-                            <th class="th_hour">11:00</th>
-                            <th ></th>
-                            <th ></th>
-                            <th ></th>
-                            <th class="th_hour">12:00</th>
-                            <th ></th>
-                            <th ></th>
-                            <th ></th>
-                            <th class="th_hour">13:00</th>
-                            <th ></th>
-                            <th ></th>
-                            <th ></th>
-                            <th class="th_hour">14:00</th>
-                            <th ></th>
-                            <th ></th>
-                            <th ></th>
-                            <th class="th_hour">15:00</th>
-                            <th ></th>
-                            <th ></th>
-                            <th ></th>
-                            <th class="th_hour">16:00</th>
-                            <th ></th>
-                            <th ></th>
-                            <th ></th>
-                            <th class="th_hour">17:00</th>
-                            <th ></th>
-                            <th ></th>
-                            <th ></th>
-                            <th class="th_hour">18:00</th>
-                            <th ></th>
-                            <th ></th>
-                            <th ></th>
-                            <th class="th_hour">19:00</th>
-                            <th ></th>
-                            <th ></th>
-                            <th ></th>
-                            <th class="th_hour">20:00</th>
-                            <th ></th>
-                            <th ></th>
-                            <th ></th>
-                            <th class="th_hour">21:00</th><th ></th>
-                            <th ></th>
-                            <th ></th>
-                            <th class="th_hour">22:00</th><th ></th>
-                            <th ></th>
-                            <th ></th>
-                            <th class="th_hour">23:00</th><th ></th>
-                            <th ></th>
-                            <th ></th>
-                            <th class="th_hour">24:00</th>
-                        
-                    </tr>
-                </thead>
-                <tbody><div id="echart_bar_horizontal"></div>
-                            <tr>
-                                <th>Lundi 04/03</th>
-                                
-                                    <td colspan="40">
-                                        
-                                            <article class="tile is-child notification is-primary event">
-                                          
-                                            </article>
-                                        
-                                    </td>
-                            </tr>
-                        
-                    
-                        
-                            <tr>
-                                <th>Mardi 05/03</th>
-                                
-                                     <td colspan="40">
-                                        
-                                            <article class="tile is-child notification is-primary event">
-                                          
-                                            </article>
-                                        
-                                    </td>
-                                
-                            </tr>
-                        
-                    
-                        
-                            <tr>
-                                <th>Mercredi 06/03</th>
-                                
-                                   <td colspan="40">
-                                        
-                                            <article class="tile is-child notification is-primary event">
-                                          
-                                            </article>
-                                        
-                                    </td>
-                                
-                            </tr>
-                        
-                    
-                        
-                            <tr>
-                                <th>Jeudi 07/03</th>
-                                
-                                    <td colspan="40">
-                                        
-                                            <article class="tile is-child notification is-primary event">
-                                          
-                                            </article>
-                                        
-                                    </td>
-                                
-                            </tr>
-                        
-                    
-                        
-                            <tr>
-                                <th>Vendredi 08/03</th>
-                                
-                                    <td colspan="40">
-                                        
-                                            <article class="tile is-child notification is-primary event">
-                                          
-                                            </article>
-                                        
-                                    </td>
-                                
-                            </tr>
-                        
-                            <tr>
-                                <th>Samedi 08/03</th>
-                                
-                                    <td colspan="32">
-                                        
-                                            <article class="tile is-child notification is-primary event">
-                                          
-                                            </article>
-                                        
-                                    </td>
-                            </tr>
-                               <tr>
-                                <th>Dimanche 08/03</th>
-                                
-                                    <td colspan="32">
-                                        
-                                            <article class="tile is-child notification is-primary event">
-                                          
-                                            </article>
-                                        
-                                    </td>
-                            </tr>
-                </tbody>
-            </table>
-        </section></div>
+          </div>
        
          <div class="col-md-12">
       <div class="x_panel">
@@ -761,59 +844,7 @@
     
  
 
-                  <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
-                    <div class="modal-dialog modal-lg">
-                      <div class="modal-content">
-
-                        <div class="modal-header">
-                         
-                          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
-                          </button>
-                        </div>
-
-                        <div class="modal-body">
-                       <div class="col-sm-">
-                    <h2 class="day">Lundi</h2> <small>For 24H format use format: 'HH:mm'</small>
-                    <div class="form-group">
-                        <div class="input-group date" id="myDatepicker3">
-                            <input type="text" class="form-control">
-                            <span class="input-group-addon">
-                               <span class="glyphicon glyphicon-calendar"></span>
-                            </span>
-                        </div>
-                    </div>
-                </div><div class="col-sm-3">
-                    Only Time Picker <small>For 24H format use format: 'HH:mm'</small>
-                    <div class="form-group">
-                        <div class="input-group date" id="myDatepicker3">
-                            <input type="text" class="form-control">
-                            <span class="input-group-addon">
-                               <span class="glyphicon glyphicon-calendar"></span>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                
-                 <div class="col-sm-3">
-                    Only Time Picker <small>For 24H format use format: 'HH:mm'</small>
-                    <div class="form-group">
-                        <div class="input-group date" id="myDatepicker2">
-                            <input type="text" class="form-control">
-                            <span class="input-group-addon">
-                               <span class="glyphicon glyphicon-calendar"></span>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                          <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
-
-                      </div>
-                    </div>
-                  </div>
+               
                
                 
                 

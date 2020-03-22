@@ -8,7 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="images/favicon.ico" type="image/ico" />
-
+<link rel="stylesheet" type="text/css" href="">
+  
         
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
         <!-- TODO: Se passer de FontAwesome. -->
@@ -94,26 +95,6 @@
                       <li><a href="index.php">Dashboard</a></li>
                       <li><a href="index2.html">Dashboard2</a></li>
                       <li><a href="index3.html">Dashboard3</a></li>
-                    </ul>
-                  </li>
-                      <li><a><i class="fa fa-edit"></i> Bibliotheque <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a><strong>Salle de Lecture</strong> <i class="fa fa-plus"></i></a>
-                      <ul id="fct" class="nav child_menu">
-                      <li><a href="#etat">Etat</a></li>
-                      <li><a href="#calendrier">Regles</a></li>
-
-                    </ul>
-                  </li>
-                      <li><a><strong>Librairie</strong> <i class="fa fa-plus"></i></a>
-                      <ul id="fct" class="nav child_menu">
-                      <li><a href="document.php">Documents</a></li>
-                      <li><a href="livre_emprunte.php">Empruntes</a></li>
-
-                 
-                    </ul>
-                  </li>
-                      
                     </ul>
                   </li>
                   <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
@@ -286,10 +267,10 @@
         <div class="right_col" role="main">
           <!-- top tiles -->
           <div class="row" style="display: inline-block;" >
-          <div class="tile_count"style="width: 1200px; ">
+          <div class="tile_count"style="width: 1200px;">
             <div class="col-md-3 col-sm-3  tile_stats_count" style="padding-left: 50px padding-right: 50px;">
               <span class="count_top"><i class="fa fa-user"style="padding-right: 10px;"></i>Nombre d'etudiants </span>
-              <div class="count">2500</div>
+              <div class="count" id="nb_etud"></div>
                 <button type="button" class="btn btn-success btn-xs"><a href="contacts.html" style="color: white;">modifier</a><span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;"></span></button>
             </div>
             
@@ -297,18 +278,18 @@
            
             <div class="col-md-3 col-sm-3 tile_stats_count" style="padding-left: 50px padding-right: 50px;">
               <span class="count_top"><i class="fa fa-books"style="padding-right: 10px;"></i> Nombre de chaises</span>
-              <div class="count">100</div>
+              <div class="count" id="nb_chaises"></div>
  <button type="button" class="btn btn-info">modifier<span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;"></span></button>
               
             </div>
              <div class="col-md-3 col-sm-3 tile_stats_count" style="padding-left: 50px padding-right: 50px;">
               <span class="count_top"><i class="fa fa-book"style="padding-right: 10px;"></i>Documents </span>
-              <div class="count">200</div>
+              <div class="count" id="document"></div>
                 <button type="button" class="btn btn-success btn-xs"><a href="document.php" style="color: white;">plus d'infos</a><span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;"></span></button>
             </div>
               <div class="col-md-3 col-sm-3  tile_stats_count" style="padding-left: 50px padding-right: 50px;">
               <span class="count_top"><i class="fa fa-books"style="padding-right: 10px;"></i>Livre Emprunte </span>
-              <div class="count">20</div>
+              <div class="count" id="liv_emp"></div>
                 <button type="button" class="btn btn-success btn-xs"><a href="livre_emprunte.php" style="color: white;">Add</a><span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;"></span></button>
             </div>
              </div>
@@ -316,7 +297,7 @@
         <div class="col-md-12 col-sm-12 ">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2><i class="fa fa-book" style="padding-right: 20px;"></i>Documents<small>Stockage </small></h2>
+                    <h2><i  style="padding-right: 20px;"></i>Documents<small>Stockage </small></h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -390,6 +371,8 @@
 
         <button type="button"  data-dismiss="modal" class="btn btn-success" onclick="add()">Add</button>
        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
        <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase.js"></script>
 
       <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-database.js"></script>
@@ -409,9 +392,35 @@
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         
+        function reload_page(){
+   window.location.reload();
+  }
+ var nb_etud=firebase.database().ref('biblio/').child("nb_etud");
+      nb_etud.on('value', function(sna) {
+              var etat_dispo = sna.val();  
+              $("#nb_etud").append("<div>"+ etat_dispo+"</div>");
+            }); 
 
+   var nb_ch=firebase.database().ref('biblio/').child("nb_chaise");
+      nb_ch.on('value', function(sna) {
+              var etat_dispo = sna.val();  
+              $("#nb_chaises").append("<div>"+ etat_dispo+"</div>");
+            });
 
-</script>
+       var doc=firebase.database().ref('biblio/').child("document");
+      doc.on('value', function(sna) {
+              var etat_dispo = sna.val();  
+              $("#document").append("<div>"+ etat_dispo+"</div>");
+            });
+
+       var liv_emp=firebase.database().ref('biblio/').child("liv_emp");
+      liv_emp.on('value', function(sna) {
+              var etat_dispo = sna.val();  
+              $("#liv_emp").append("<div>"+ etat_dispo+"</div>");
+            });
+
+     
+          </script>
   <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
   <script src="js/doc.js"></script>
       </div>
