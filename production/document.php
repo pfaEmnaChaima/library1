@@ -344,7 +344,7 @@
        <input type="text" name="prix" id="prix" class="form-control" />
        <br />
         <label>Date entree</label>
-          <fieldset id="date_entree">
+          <fieldset >
                           <div class="control-group">
                             <div class="controls">
                               <div class="col-md-11 xdisplay_inputx form-group row has-feedback">
