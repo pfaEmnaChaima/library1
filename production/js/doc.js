@@ -25,6 +25,6 @@ function add() {
             nomDomain:document.getElementById('nom_domain').value,
             dateEntree:document.getElementById('single_cal3').value,
             Qte:document.getElementById('qte').value,
-            Prix:document.getElementById('prix').value,
+            Prix:document.getElementById('prix').value
         });
         }
