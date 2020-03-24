@@ -13,7 +13,6 @@
         <!-- TODO: Se passer de FontAwesome. -->
         <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <title>Smart Library </title>
-<link rel="stylesheet" type="text/css" href="css/sidebarcss.css">
     <!-- Bootstrap -->
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -66,7 +65,7 @@
         <div class="col-md-3 left_col menu_fixed mCustomScrollbar _mCS_1 mCS-autoHide" style="overflow: visible;">
           <div class="left_col">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.php" class="site_title"><i class="fa fa-paw"></i> <span>Smart Libray </span></a>
+              <a href=" php" class="site_title"><i class="fa fa-paw"></i> <span>Smart Libray </span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -303,15 +302,15 @@
               
             </div>
              <div class="col-md-3 col-sm-3  tile_stats_count" style="padding-left: 50px padding-right: 50px;">
-              <span class="count_top"><i class="fa fa-books"style="margin-right: 10px;" ></i>Documents </span>
+              <span class="count_top"><i class="fa fa-book"style="margin-right: 10px;" ></i>Documents </span>
               <div class="count" id="document"></div>
                 <button type="button" class="btn btn-success btn-xs"><a href="document.php" style="color: white;">plus d'infos</a><span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;"></span></button>
             </div>
 
             <div class="col-md-3 col-sm-3  tile_stats_count" style="padding-left: 50px padding-right: 50px;">
-              <span class="count_top"><i class="fa fa-books"style="padding-right: 10px;"></i>Livre Emprunte </span>
+              <span class="count_top"><i class="fa fa-book"style="margin-right: 10px;"></i>Livre Emprunte </span>
               <div class="count" id="liv_emp"></div>
-                <button type="button" class="btn btn-success btn-xs"><a href="livre_emprunte.php" style="color: white;">Add</a><span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;"></span></button>
+                <button type="button" class="btn btn-info"><a href="livre_emprunte.php" style="color: white;">Add</a><span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;"></span></button>
             </div>
              </div>
               <div class="col-md-12" id="calendrier">
@@ -367,120 +366,7 @@
   
         <div class="container">
             <div class="row">
-
-      
-          <!-- <table >
-              
-          
- 
-        
-           
-        <section class="section">
-            <nav class="level">
-                <div class="level-item">
-                    <div class="field has-addons">
-                        <p class="control">
-                            <a class="button">
-                                <span class="icon"><i class="fas fa-chevron-left"></i></span>
-                            </a>
-                        </p>
-                        <p class="control">
-                            <a class="button">
-                                Semaine du 04/03 au 10/03
-                            </a>
-                        </p>
-                        <p class="control">
-                            <a class="button">
-                                <span class="icon"><i class="fas fa-chevron-right"></i></span>
-                            </a>
-                        </p>
-                    </div>
-
-                </div>
-            </nav>
-              <table id="datatable-buttons" class="table table-striped table-bordered dataTable no-footer dtr-inline" style="width: 100%;" role="grid" aria-describedby="datatable-buttons_info">
-                                        <div class="row">
-                  <div class="col-sm-6">
-                    <div class="mb-md">
-                      <button type="button" id="add_button" data-toggle="modal" data-target="#userModal" class="btn btn-info btn-lg">Ajouter<i class="fa fa-plus" style="padding-left: 20px;"></i></button>
-                    </div>
-                  </div>
-                </div>
-                <div id="userModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                     <div class="modal-dialog" role="document">
-       <form method="post" id="user_form" enctype="multipart/form-data">
-                      <div class="modal-content">
-
-                        <div class="modal-header">
-                             <h4 class="modal-title" id="myModalLabel" >Changer horaires</h4>
-
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        </div>
-
-                        <div class="modal-body">
-                       <div class="col-sm-4" >
-                  <input type="text" name="" id="jour">
-                </div><div class="col-sm-4">
-                   <input type="time" name="" id="debut">
-                </div>
-                
-                 <div class="col-sm-4">
-                    <input type="time" name="" id="fin">
-                </div>
-                        </div>
-                        <div class="modal-footer">
-                             <input type="hidden" name="jour" id="jour" />
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                          <button type="button"data-dismiss="modal" class="btn btn-success" onclick="addh()">Save changes</button>
-                        </div>
-<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase.js"></script>
-
-      <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-database.js"></script>
-
-      <script>
-        // Your web app's Firebase configuration
-        var firebaseConfig = {
-              apiKey: "AIzaSyBiUHy07aEruI_ZgBmg-A8ez6bBc-W1gtw",
-              authDomain: "smart-library1.firebaseapp.com",
-              databaseURL: "https://smart-library1.firebaseio.com",
-              projectId: "smart-library1",
-              storageBucket: "smart-library1.appspot.com",
-              messagingSenderId: "215824460430",
-              appId: "1:215824460430:web:6d9b13ab3c7629b377b7df",
-              measurementId: "G-BC9C4EV24W"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        
-
-
-</script>
-  <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
-  <script src="js/horaire.js"></script>
-                      </div>
-                    </div>
-                  </div>
-   
-    
-      
-       
-     </form>
-     </div>
-      </div>
-                           
-                    
-          
-                <thead>
-               
-                       <tr><th>jour</th><th>heure debut </th><th>heure fin</th></tr> 
-                    
-                </thead>
-              
-                <tbody id="t_body">
-                </tbody>
-            
-             
-        </section></div></div></table>--><table  class="table table-striped table-bordered dataTable no-footer dtr-inline" style="width: 100%;" role="grid" aria-describedby="datatable-buttons_info">
+<table  class="table table-striped table-bordered dataTable no-footer dtr-inline" style="width: 100%;" role="grid" aria-describedby="datatable-buttons_info">
                                        
     <div id="userModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
      <div class="modal-dialog" role="document">
@@ -520,28 +406,7 @@
 
         <button type="button"  data-dismiss="modal" class="btn btn-success" onclick="addh()">Add</button>
        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-       <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase.js"></script>
-
-      <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-database.js"></script>
-
-      <script>
-        // Your web app's Firebase configuration
-        var firebaseConfig = {
-              apiKey: "AIzaSyBiUHy07aEruI_ZgBmg-A8ez6bBc-W1gtw",
-              authDomain: "smart-library1.firebaseapp.com",
-              databaseURL: "https://smart-library1.firebaseio.com",
-              projectId: "smart-library1",
-              storageBucket: "smart-library1.appspot.com",
-              messagingSenderId: "215824460430",
-              appId: "1:215824460430:web:6d9b13ab3c7629b377b7df",
-              measurementId: "G-BC9C4EV24W"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        
-
-
-</script>
+       
   <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
   <script src="js/horaire.js"></script>
       </div>
@@ -605,9 +470,16 @@
       var temp=firebase.database().ref('biblio/').child("temp");
       temp.on('value', function(sna) {
               var etat_dispo = sna.val();  
-              $("#temp").append("<h3>"+ etat_dispo+" °"+"</h3>");
+      $("#temp").append("<h3>"+ etat_dispo+" °"+"</h3>");
             });
+
+         //  $(document).ready(function(){
+         // var test=60;
+         // $('input[type=text]').attr({value : test});
+         //        });
+          
           </script>
+        
   <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
   <script src="js/horaire.js"></script>
              <div class="col-md-12" id="etat">
@@ -615,27 +487,37 @@
                 <div class="x_panel">
                   <div class="x_title">
                     <h2>Places disponibles</h2>
+                    
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
                       <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <ul class="dropdown-menu" role="menu" x-placement="bottom-start" style="position will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 30px, 0px);">
-                          <li><a href="#">Settings 1</a>
-                          </li>
-                          <li><a href="#">Settings 2</a>
-                          </li>
-                        </ul>
+                        
                       </li>
                       <li><a class="close-link"><i class="fa fa-close"></i></a>
                       </li>
                     </ul>
+
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content" style="display: block;">
-                   
+
                     
-                      <input class="knob" data-width="200" data-height="200" data-displayPrevious=true data-fgColor="#26B99A" data-skin="tron" data-thickness=".2" value="20">
+          <input class="knob" data-width="200" data-height="200" data-displayPrevious=true data-fgColor="#26B99A" data-angleOffset=-125 data-angleArc=250 id="valeur" type="text" value="50" type="text" data-rotation="anticlockwise" readonly />
+          
+
+            
+          <script type="text/javascript">
+      var knob=firebase.database().ref('biblio/').child("place_dispo");
+    knob.on('value', function(sna) {
+         var etat_dispo = sna.val();   
+         $('#valeur').val(etat_dispo);
+
+    });
+
+          </script>
+
                     </div>
                    
                     
@@ -667,9 +549,19 @@
                   <div class="x_content" style="display: block;">
                     
                      
-                       <input class="knob" data-width="200" data-height="200" data-angleOffset=-125 data-angleArc=250 data-fgColor="#e01a1a" data-rotation="anticlockwise" value="80">
+          <input class="knob" data-width="200" data-height="200" data-angleOffset=-125 data-angleArc=250 data-fgColor="#e01a1a"
+           data-rotation="anticlockwise" value="50" id="nbe" readonly>
                  
+<script type="text/javascript">
+      var knob=firebase.database().ref('biblio/').child("nb_etud_existe");
+    knob.on('value', function(sna) {
+         var etat_dispo = sna.val();   
+          
+          $('#nbe').val(etat_dispo);
 
+    });
+
+          </script>
                     
                    
                     
@@ -841,13 +733,7 @@
                 </div>
               </div>
      </div>
-    
- 
-
-               
-               
-                
-                
+         
                 
             </div>
         </div>
@@ -942,6 +828,8 @@
     <script src="../vendors/raphael/raphael.min.js"></script>
     <script src="../vendors/morris.js/morris.min.js"></script>
 
+    
+
      <!-- Bootstrap Colorpicker -->
     <script src="../vendors/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
 	<script  type="text/javascript">
@@ -976,5 +864,7 @@
         $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
     });
 </script>
+
+
   </body>
 </html>

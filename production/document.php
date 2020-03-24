@@ -97,6 +97,22 @@
                       <li><a href="index3.html">Dashboard3</a></li>
                     </ul>
                   </li>
+
+                       <li><a><i class="fa fa-edit"></i> Bibliotheque <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                    
+                      <li><a><strong>Librairie</strong> <i class="fa fa-plus"></i></a>
+                      <ul id="fct" class="nav child_menu">
+                      <li><a href="document.php">Documents</a></li>
+                      <li><a href="livre_emprunte.php">Empruntes</a></li>
+
+                 
+                    </ul>
+                  </li>
+                      
+                    </ul>
+                  </li>
+
                   <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="form.html">General Form</a></li>
@@ -269,7 +285,7 @@
           <div class="row" style="display: inline-block;" >
           <div class="tile_count"style="width: 1200px;">
             <div class="col-md-3 col-sm-3  tile_stats_count" style="padding-left: 50px padding-right: 50px;">
-              <span class="count_top"><i class="fa fa-user"style="padding-right: 10px;"></i>Nombre d'etudiants </span>
+              <span class="count_top"><i class="fa fa-user"style="margin-right: 10px;"></i>Nombre d'etudiants </span>
               <div class="count" id="nb_etud"></div>
                 <button type="button" class="btn btn-success btn-xs"><a href="contacts.html" style="color: white;">modifier</a><span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;"></span></button>
             </div>
@@ -277,37 +293,31 @@
             
            
             <div class="col-md-3 col-sm-3 tile_stats_count" style="padding-left: 50px padding-right: 50px;">
-              <span class="count_top"><i class="fa fa-books"style="padding-right: 10px;"></i> Nombre de chaises</span>
+              <span class="count_top"><i  class="fas fa-chair" style="margin-right: 10px;"></i> Nombre de chaises</span>
               <div class="count" id="nb_chaises"></div>
- <button type="button" class="btn btn-info">modifier<span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;"></span></button>
+ <button type="button" class="btn btn-info">modifier<span class="glyphicon glyphicon-pencil" aria-hidden="true" style="padding-left: 10px;"></span></button>
               
             </div>
              <div class="col-md-3 col-sm-3 tile_stats_count" style="padding-left: 50px padding-right: 50px;">
-              <span class="count_top"><i class="fa fa-book"style="padding-right: 10px;"></i>Documents </span>
+              <span class="count_top"><i class="fa fa-book"style="margin-right: 10px;"></i>Documents </span>
               <div class="count" id="document"></div>
                 <button type="button" class="btn btn-success btn-xs"><a href="document.php" style="color: white;">plus d'infos</a><span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;"></span></button>
             </div>
               <div class="col-md-3 col-sm-3  tile_stats_count" style="padding-left: 50px padding-right: 50px;">
-              <span class="count_top"><i class="fa fa-books"style="padding-right: 10px;"></i>Livre Emprunte </span>
+              <span class="count_top"><i class="fa fa-book"style="margin-right: 10px;"></i>Livre Emprunte </span>
               <div class="count" id="liv_emp"></div>
-                <button type="button" class="btn btn-success btn-xs"><a href="livre_emprunte.php" style="color: white;">Add</a><span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;"></span></button>
+                <button type="button" class="btn btn-info"><a href="livre_emprunte.php" style="color: white;">Add</a><span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;"></span></button>
             </div>
              </div>
           </div>
         <div class="col-md-12 col-sm-12 ">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2><i  style="padding-right: 20px;"></i>Documents<small>Stockage </small></h2>
+                    <h2><i class="fa fa-book"  style="margin-right: 20px;"></i>Documents<small>Stockage </small></h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Settings 1</a>
-                            <a class="dropdown-item" href="#">Settings 2</a>
-                          </div>
-                      </li>
+                   
                       <li><a class="close-link"><i class="fa fa-close"></i></a>
                       </li>
                     </ul>
@@ -322,7 +332,7 @@
                                         <div class="row">
                   <div class="col-sm-6">
                     <div class="mb-md">
-                      <button type="button" id="add_button" data-toggle="modal" data-target="#userModal" class="btn btn-info btn-lg">Ajouter<i class="fa fa-plus" style="padding-left: 20px;"></i></button>
+                      <button type="button" id="add_button" data-toggle="modal" data-target="#userModal" class="btn btn-info btn-lg">Ajouter<i class="fa fa-plus" style="margin-left: 20px;"></i></button>
                     </div>
                   </div>
                 </div>
@@ -422,7 +432,7 @@
      
           </script>
   <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
-  <script src="js/doc.js"></script>
+  <script src="js/docu.js"></script>
       </div>
        </div></form>
      </div>

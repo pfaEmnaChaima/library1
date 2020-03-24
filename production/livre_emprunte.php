@@ -93,6 +93,21 @@
                       <li><a href="index3.html">Dashboard3</a></li>
                     </ul>
                   </li>
+
+                     <li><a><i class="fa fa-edit"></i> Bibliotheque <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                    
+                      <li><a><strong>Librairie</strong> <i class="fa fa-plus"></i></a>
+                      <ul id="fct" class="nav child_menu">
+                      <li><a href="document.php">Documents</a></li>
+                      <li><a href="livre_emprunte.php">Empruntes</a></li>
+
+                 
+                    </ul>
+                  </li>
+                      
+                    </ul>
+                  </li>
                   <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="form.html">General Form</a></li>
@@ -273,7 +288,7 @@
             
            
             <div class="col-md-3 col-sm-5  tile_stats_count" style="padding-left: 50px padding-right: 50px;">
-              <span class="count_top"><i class='fa fa-chair' style="margin-right: 10px;"></i> Nombre de chaises</span>
+              <span class="count_top"><i aria-hidden="true"></i> Nombre de chaises</span>
               <div class="count" id="nb_chaises"></div>
               <button type="button" class="btn btn-info">modifier<span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;"></span></button>
               
@@ -287,7 +302,7 @@
             <div class="col-md-3 col-sm-3  tile_stats_count" style="padding-left: 50px padding-right: 50px;">
               <span class="count_top"><i class="fa fa-book" aria-hidden="true" style="margin-right: 10px;"></i>Livre Emprunte </span>
               <div class="count" id="liv_emp"></div>
-                <button type="button" class="btn btn-success btn-xs"><a href="livre_emprunte.php" style="color: white;">Add</a><span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;"></span></button>
+                <button type="button" class="btn btn-info"><a href="livre_emprunte.php" style="color: white;">Add</a><span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;"></span></button>
             </div>
              </div>
           </div>
@@ -315,13 +330,13 @@
                           <div class="col-sm-12">
                           <div class="card-box table-responsive">
                           <div id="datatable-buttons_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap no-footer">
-                            <table id="datatable-buttons" class="table table-striped table-bordered dataTable no-footer dtr-inline" style="width: 100%;" role="grid" aria-describedby="datatable-buttons_info">
+                  <table id="datatable-buttons" class="table table-striped table-bordered dataTable no-footer dtr-inline" style="width: 100%;" role="grid" aria-describedby="datatable-buttons_info">
                                         <div class="row">
                   <div class="col-sm-6">
                     <div class="mb-md">
-                      <button type="button" id="add_button" data-toggle="modal" data-target="#userModal" class="btn btn-info btn-lg">Ajouter<i class="fa fa-plus" style="padding-left: 20px;"></i></button>
+                      <button type="button" id="add_button" data-toggle="modal" data-target="#userModal" class="btn btn-info btn-lg"><i class="fa fa-plus" style="margin-right: 10px;" ></i>Ajouter</button>
 
-                      <button type="button" id="add_button" data-toggle="modal" data-target="#userModalReturn" class="btn btn-info btn-lg">Return<i class="fa fa-plus" style="padding-left: 20px;"></i></button>
+                      <button type="button" id="add_button" data-toggle="modal" data-target="#userModalReturn"  class="btn btn-secondary btn-lg btn-danger"><i class="fas fa-minus" style="margin-right: 10px;" ></i>Return</button>
                     </div>
                   </div>
                 </div>
@@ -396,6 +411,57 @@
        </div>
      </div>
       </div>
+
+
+      
+      <thead >
+         <tr role="row">
+            
+            
+            <th class="sorting_asc" tabindex="0"  rowspan="1" colspan="1" style="width: 120px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">id-Emprunte</th>
+            
+            <th class="sorting_asc" tabindex="0"  rowspan="1" colspan="1" style="width: 100px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">id-Livre</th>
+
+            <th class="sorting_asc" tabindex="0"  rowspan="1" colspan="1" style="width: 110px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">id-Emprunteur</th>
+
+            <!-- <th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 60px;" aria-label="Position: activate to sort column ascending">Nom-Emprunteur</th> -->
+
+            <th class="sorting" tabindex="0"  rowspan="1" colspan="1" style="width: 50px;" aria-label="Office: activate to sort column ascending">Date-Emprunte</th>         
+
+           <th class="sorting" tabindex="0"  rowspan="1" colspan="1" style="width: 50px;" aria-label="Office: activate to sort column ascending">Date-retour</th>
+
+
+            <th class="sorting" tabindex="0"  rowspan="1" colspan="1" style="width: 52px;" aria-label="Start date: activate to sort column ascending">Nom-livre</th>
+
+            <th class="sorting" tabindex="0"  rowspan="1" colspan="1" style="width: 52px;" aria-label="Start date: activate to sort column ascending">Etat</th>
+
+            
+          </tr>
+                      </thead>
+                      <tbody >
+                     
+                      </tbody>
+                    </table>
+                  </div></div></div></div></div><div class="dataTables_paginate paging_simple_numbers" id="datatable-buttons_paginate"></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+                </div>
+              </div></div></div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+          <div class="pull-right">
+            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+      </div>
+    </div>
+
       <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
        <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase.js"></script>
@@ -522,6 +588,56 @@ var d=new Date();
   var etudiant = firebase.database().ref().child('etudiants');
     var ok=false;
 
+var testt=firebase.database().ref('stockage/');
+var test=firebase.database().ref('etudiants/');
+test.once('value', function(snapshot) {
+  var a;
+  var b=false;
+  var bb=false;
+
+    snapshot.forEach(function(childSnapshot) {
+        var id = childSnapshot.key;
+           a=id;
+           if(a==id_etudiant) {
+                 b=true;           }
+});
+        
+    testt.once('value', function(snapshoot) {
+        var idliv;
+        snapshoot.forEach(function(childSnapshoot) {
+            var idkey = childSnapshoot.key;
+              idliv=idkey;
+              if(idliv==id_livre) {
+                 bb=true;          
+
+
+               }
+                                                  });
+                                            
+     if((b==false)&&(bb==false)){
+            Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: "id-Emprunteur et id-Livre n'est pas correct",
+                        });
+            }
+    else if(b==false){
+        Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: "id-Emprunteur n'est pas correct",
+                        });
+    }
+    
+    else if(bb==false){
+      Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: "id-Livre n'est pas correct",
+                        });}
+    
+
+    else if((b==true)&&(bb==true)){
 
 
     etudiant.orderByChild('id').equalTo(id_etudiant).on('child_added', function(snap) {
@@ -598,6 +714,14 @@ var d=new Date();
   });
            }
 
+    
+   
+});
+
+});
+}
+
+
 
  function reload_page(){
    window.location.reload();
@@ -606,57 +730,9 @@ var d=new Date();
 </script>
 
   <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
-  <script src="js/emprunte.js"></script>
+  <script src="js/emprunt.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
-      
-      <thead >
-         <tr role="row">
-            
-            
-            <th class="sorting_asc" tabindex="0"  rowspan="1" colspan="1" style="width: 120px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">id-Emprunte</th>
-            
-            <th class="sorting_asc" tabindex="0"  rowspan="1" colspan="1" style="width: 100px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">id-Livre</th>
-
-            <th class="sorting_asc" tabindex="0"  rowspan="1" colspan="1" style="width: 110px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">id-Emprunteur</th>
-
-            <!-- <th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 60px;" aria-label="Position: activate to sort column ascending">Nom-Emprunteur</th> -->
-
-            <th class="sorting" tabindex="0"  rowspan="1" colspan="1" style="width: 50px;" aria-label="Office: activate to sort column ascending">Date-Emprunte</th>         
-
-           <th class="sorting" tabindex="0"  rowspan="1" colspan="1" style="width: 50px;" aria-label="Office: activate to sort column ascending">Date-retour</th>
-
-
-            <th class="sorting" tabindex="0"  rowspan="1" colspan="1" style="width: 52px;" aria-label="Start date: activate to sort column ascending">Nom-livre</th>
-
-            <th class="sorting" tabindex="0"  rowspan="1" colspan="1" style="width: 52px;" aria-label="Start date: activate to sort column ascending">Etat</th>
-
-            
-          </tr>
-                      </thead>
-                      <tbody >
-                     
-                      </tbody>
-                    </table>
-                  </div></div></div></div></div><div class="dataTables_paginate paging_simple_numbers" id="datatable-buttons_paginate"></div></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-                </div>
-              </div></div></div>
-        <!-- /page content -->
-
-        <!-- footer content -->
-        <footer>
-          <div class="pull-right">
-            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
-          </div>
-          <div class="clearfix"></div>
-        </footer>
-        <!-- /footer content -->
-      </div>
-    </div>
 
     <!-- jQuery -->
     <script src="../vendors/jquery/dist/jquery.min.js"></script>
