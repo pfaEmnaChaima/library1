@@ -97,10 +97,15 @@
                       <li><a href="index3.html">Dashboard3</a></li>
                     </ul>
                   </li>
-
-                       <li><a><i class="fa fa-edit"></i> Bibliotheque <span class="fa fa-chevron-down"></span></a>
+  <li><a><i class="fa fa-edit"></i> Bibliotheque <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                    
+                      <li><a><strong>Salle de Lecture</strong> <i class="fa fa-plus"></i></a>
+                      <ul id="fct" class="nav child_menu">
+                      <li><a href="index.php#etat">Etat</a></li>
+                      <li><a href="index.php#calendrier">Regles</a></li>
+
+                    </ul>
+                  </li>
                       <li><a><strong>Librairie</strong> <i class="fa fa-plus"></i></a>
                       <ul id="fct" class="nav child_menu">
                       <li><a href="document.php">Documents</a></li>

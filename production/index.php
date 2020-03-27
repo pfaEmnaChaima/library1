@@ -38,6 +38,8 @@
     <link href="../vendors/normalize-css/normalize.css" rel="stylesheet">
     <link href="../vendors/ion.rangeSlider/css/ion.rangeSlider.css" rel="stylesheet">
     <link href="../vendors/ion.rangeSlider/css/ion.rangeSlider.skinFlat.css" rel="stylesheet">
+      <!-- Switchery -->
+    <link href="../vendors/switchery/dist/switchery.min.css" rel="stylesheet">
     <!-- Bootstrap Colorpicker -->
     <link href="../vendors/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css" rel="stylesheet">
     <!-- bootstrap-progressbar -->
@@ -359,7 +361,7 @@
   
         <div class="container">
             <div class="row">
-<table  class="table table-striped table-bordered dataTable no-footer dtr-inline" style="width: 100%;" role="grid" aria-describedby="datatable-buttons_info">
+<table  class="table table-striped table-bordered dataTable no-footer dtr-inline"  role="grid" aria-describedby="datatable-buttons_info">
                                        
     <div id="userModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
      <div class="modal-dialog" role="document">
@@ -410,7 +412,7 @@
                       </thead>
                       <tbody id="table_body">
                      </tbody>
-                    </table></div></div>
+                    </table></div></div></div></div>
                     
            <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
@@ -561,22 +563,104 @@ function addh() {
                   <div class="x_panel">
                     <div class="x_title">
                       <h2>Temperature</h2>
-                      <ul class="nav navbar-right panel_toolbox">
-                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                        </li>
-                      
-
-<li><a class="close-link" style="margin-left: 15px"><i class="fa fa-times" ></i></a>                        </li>
-                      </ul>
+                    
                       <div class="clearfix"></div>
                     </div>
-                    <div class="x_content">
-                      
-                      <div class="col-sm-12">
+                  <div class="x_content">
+                      <div class="row">
+                          <div class="col-sm-12">
+
+
                         <div class="weather-text pull-right">
                           <h3  id="temp"></h3>
                         </div>
-                      </div>
+                     
+                            <div class="card-box table-responsive">
+                                       <div id="datatable-buttons_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap no-footer">
+                                        <table class="table table-striped table-bordered dataTable no-footer dtr-inline" role="grid" aria-describedby="datatable-buttons_info">
+                                        <div class="row">
+                  <div class="col-sm-6">
+                    <div class="mb-md">
+                      <button type="button" id="add_button" data-toggle="modal" data-target="#climatiseur" class="btn btn-info btn-sm"><i class="fa fa-plus" ></i></button>
+                    </div>
+                  </div>
+                </div>
+    <div id="climatiseur" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+     <div class="modal-dialog" role="document">
+       <form method="post" id="user_form" enctype="multipart/form-data">
+       <div class="modal-content">
+      <div class="modal-header">
+       <h4 class="modal-title" id="myModalLabel" >Ajouter un climatiseur</h4>
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+       <label>id-Climatiseur</label>
+       <input type="text" name="id_clim" id="id_clim" class="form-control"  />
+       <br />
+       <label>marque</label>
+       <input type="text" name="marq" id="marq" class="form-control"  />
+       <br />
+       <label>Emplacement</label>
+       <input type="text" name="empc" id="empc" class="form-control"  />
+        <br />
+        <label>Etat</label>
+       <input type="text" name="etat_clim" id="etat_clim" class="form-control"  />
+       <br /> <label>temperature</label>
+       <input type="text" name="tempera" id="tempera" class="form-control" />
+       <br />
+        <label>Mode</label>
+       <input type="text" name="mode" id="mode" class="form-control" />
+       <br />
+       
+      </div>
+      <div class="modal-footer">
+       <input type="hidden" name="id_clim" id="id_clim" />
+   
+      
+
+        <button type="button"  data-dismiss="modal" class="btn btn-success" onclick="add()">Add</button>
+       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+       <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase.js"></script>
+
+      <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-database.js"></script>
+
+      <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+              apiKey: "AIzaSyBiUHy07aEruI_ZgBmg-A8ez6bBc-W1gtw",
+              authDomain: "smart-library1.firebaseapp.com",
+              databaseURL: "https://smart-library1.firebaseio.com",
+              projectId: "smart-library1",
+              storageBucket: "smart-library1.appspot.com",
+              messagingSenderId: "215824460430",
+              appId: "1:215824460430:web:6d9b13ab3c7629b377b7df",
+              measurementId: "G-BC9C4EV24W"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        
+       
+
+     
+          </script>
+  <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+  <script src="js/clim.js"></script>
+
+      </div>
+       </div></form>
+     </div>
+      </div>
+                            <thead>
+                        <tr role="row"><th >Climatiseur</th><th>Marque</th><th >Etat</th><th>Temperature</th><th>Mode</th><th>Emplacement</th></tr>
+                      </thead>
+                      <tbody id="table_tem">
+                     </tbody>
+                    </table>  <label>
+                              <input type="checkbox" class="js-switch" checked /> Ouvert
+                            </label>
+                     
 
                      
                       </div>
@@ -586,6 +670,10 @@ function addh() {
                 
                 <!-- end of weather widget -->
 </div>
+                  </div></div></div></div></div></div>
+                  
+              
+                        
 <div class="col-md-6 col-sm-5 ">
               <br><br> <br><br><br>
               <div class="x_panel tile">
@@ -686,7 +774,7 @@ function addh() {
               </div>
             </div>
 
-          </div>
+          
        
          <div class="col-md-12">
       <div class="x_panel">
@@ -731,6 +819,8 @@ function addh() {
     <script src="../vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
     <script src="../vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+       <!-- Switchery -->
+    <script src="../vendors/switchery/dist/switchery.min.js"></script>
     <!-- FastClick -->
     <script src="../vendors/fastclick/lib/fastclick.js"></script>
     <!-- NProgress -->
