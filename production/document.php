@@ -318,7 +318,7 @@
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
                    
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+              <li><a class="close-link" style="margin-left: 15px"><i class="fa fa-times" ></i></a>
                       </li>
                     </ul>
                     <div class="clearfix"></div>

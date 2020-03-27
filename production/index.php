@@ -348,17 +348,10 @@
           <button type="button" id="add_button" data-toggle="modal" data-target="#userModal" class="btn btn-info ">modifier<span class="glyphicon glyphicon-pencil" aria-hidden="true"style="padding-left: 10px;"></span></button>
             <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
             </li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Settings 1</a>
-                    </li>
-                    <li><a href="#">Settings 2</a>
-                    </li>
-                </ul>
-            </li>
-            <li><a class="close-link"><i class="fa fa-close"></i></a>
-            </li>
+          
+          <li><a class="close-link" style="margin-left: 15px">
+              <i class="fa fa-times" ></i></a>           
+                     </li>
         </ul>
         <div class="clearfix"></div>
     </div>
@@ -408,7 +401,6 @@
        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
        
   <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
-  <script src="js/horaire.js"></script>
       </div>
        </div></form>
      </div>
@@ -419,6 +411,7 @@
                       <tbody id="table_body">
                      </tbody>
                     </table></div></div>
+                    
            <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
        <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase.js"></script>
@@ -439,6 +432,29 @@
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
+
+        var rootRef=firebase.database().ref().child("horaires");
+
+   rootRef.orderByChild("id").on("child_added",snap => {
+  var jour=snap.child("jour").val();
+  var debut=snap.child("debut").val();
+  var fin=snap.child("fin").val();
+
+  $("#table_body").append("<tr><th>"+ jour+"</th><th>"+debut+"</th><th>"+fin+"</th></tr>");
+
+});
+ 
+
+function addh() {
+          const jour=document.getElementById('jour');
+          const database=firebase.database();
+          const rootRef=database.ref('horaires');
+          rootRef.child(jour.value).set({
+            jour:document.getElementById('jour').value,
+            debut:document.getElementById('debut').value,
+           fin:document.getElementById('fin').value
+        });
+        }
         
         function reload_page(){
    window.location.reload();
@@ -448,40 +464,44 @@
               var etat_dispo = sna.val();  
               $("#nb_etud").append("<div>"+ etat_dispo+"</div>");
             }); 
-
    var nb_ch=firebase.database().ref('biblio/').child("nb_chaise");
       nb_ch.on('value', function(sna) {
               var etat_dispo = sna.val();  
               $("#nb_chaises").append("<div>"+ etat_dispo+"</div>");
+                 var knob=firebase.database().ref('biblio/').child("nb_etud_existe");
+    knob.on('value', function(sna) {
+         var etat_dispo1 = sna.val();  
+         $('.knob').trigger('configure', {
+                  'max': etat_dispo
+              });
+      $("#nbe").val(etat_dispo1).trigger('change');
+      $('#valeur').val(etat_dispo-etat_dispo1).trigger('change');
+    });
             });
-
        var doc=firebase.database().ref('biblio/').child("document");
       doc.on('value', function(sna) {
               var etat_dispo = sna.val();  
               $("#document").append("<div>"+ etat_dispo+"</div>");
             });
-
        var liv_emp=firebase.database().ref('biblio/').child("liv_emp");
       liv_emp.on('value', function(sna) {
               var etat_dispo = sna.val();  
               $("#liv_emp").append("<div>"+ etat_dispo+"</div>");
             });
-
       var temp=firebase.database().ref('biblio/').child("temp");
       temp.on('value', function(sna) {
               var etat_dispo = sna.val();  
       $("#temp").append("<h3>"+ etat_dispo+" °"+"</h3>");
             });
 
-         //  $(document).ready(function(){
-         // var test=60;
-         // $('input[type=text]').attr({value : test});
-         //        });
+ //         //  $(document).ready(function(){
+ //         // var test=60;
+ //         // $('input[type=text]').attr({value : test});
+ //         //        });
           
           </script>
         
   <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
-  <script src="js/horaire.js"></script>
              <div class="col-md-12" id="etat">
              	  <div class="col-md-4">
                 <div class="x_panel">
@@ -491,12 +511,10 @@
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
+                     
+                      <li><a class="close-link" style="margin-left: 15px">
+                        <i class="fa fa-times" ></i></a>                   
+                           </li>
                     </ul>
 
                     <div class="clearfix"></div>
@@ -504,20 +522,8 @@
                   <div class="x_content" style="display: block;">
 
                     
-          <input class="knob" data-width="200" data-height="200" data-displayPrevious=true data-fgColor="#26B99A" data-angleOffset=-125 data-angleArc=250 id="valeur" type="text" value="50" type="text" data-rotation="anticlockwise" readonly />
-          
-
-            
-          <script type="text/javascript">
-      var knob=firebase.database().ref('biblio/').child("place_dispo");
-    knob.on('value', function(sna) {
-         var etat_dispo = sna.val();   
-         $('#valeur').val(etat_dispo);
-
-    });
-
-          </script>
-
+   <input class="knob" data-width="200" data-height="200" data-displayPrevious=true data-fgColor="#26B99A" data-angleOffset=-125 data-angleArc=250 id="valeur" type="text"   data-rotation="anticlockwise" value="" readonly />
+    
                     </div>
                    
                     
@@ -532,60 +538,35 @@
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <ul class="dropdown-menu" role="menu" x-placement="bottom-start" style="position will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 30px, 0px);">
-                          <li><a href="#">Settings 1</a>
-                          </li>
-                          <li><a href="#">Settings 2</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
+                
+                            <li><a class="close-link" style="margin-left: 15px">
+                              <i class="fa fa-times" ></i></a>              
+                                      </li>
                     </ul>
+
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content" style="display: block;">
                     
                      
           <input class="knob" data-width="200" data-height="200" data-angleOffset=-125 data-angleArc=250 data-fgColor="#e01a1a"
-           data-rotation="anticlockwise" value="50" id="nbe" readonly>
-                 
-<script type="text/javascript">
-      var knob=firebase.database().ref('biblio/').child("nb_etud_existe");
-    knob.on('value', function(sna) {
-         var etat_dispo = sna.val();   
+           data-rotation="anticlockwise" value="" id="nbe" readonly>
           
-          $('#nbe').val(etat_dispo);
-
-    });
-
-          </script>
-                    
-                   
-                    
-                    
                   </div>
                 </div>
               </div>
                 <!-- start of weather widget -->
                 <div class="col-md-4 col-sm-4 ">
+                        
                   <div class="x_panel">
                     <div class="x_title">
                       <h2>Temperature</h2>
                       <ul class="nav navbar-right panel_toolbox">
                         <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                         </li>
-                        <li class="dropdown">
-                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                              <a class="dropdown-item" href="#">Settings 1</a>
-                              <a class="dropdown-item" href="#">Settings 2</a>
-                            </div>
-                        </li>
-                        <li><a class="close-link"><i class="fa fa-close"></i></a>
-                        </li>
+                      
+
+<li><a class="close-link" style="margin-left: 15px"><i class="fa fa-times" ></i></a>                        </li>
                       </ul>
                       <div class="clearfix"></div>
                     </div>
@@ -606,6 +587,7 @@
                 <!-- end of weather widget -->
 </div>
 <div class="col-md-6 col-sm-5 ">
+              <br><br> <br><br><br>
               <div class="x_panel tile">
                 <div class="x_title">
                   <h2>Satisfaction des etudiants</h2>
@@ -616,8 +598,7 @@
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
                       
                     </li>
-                    <li><a class="close-link"><i class="fa fa-close"></i></a>
-                    </li>
+<li><a class="close-link" style="margin-left: 15px"><i class="fa fa-times" ></i></a>                    </li>
                   </ul>
                   <div class="clearfix"></div>
                 </div>
@@ -714,15 +695,8 @@
                   <ul class="nav navbar-right panel_toolbox">
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                     </li>
-                    <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <a class="dropdown-item" href="#">Settings 1</a>
-                          <a class="dropdown-item" href="#">Settings 2</a>
-                        </div>
-                    </li>
-                    <li><a class="close-link"><i class="fa fa-close"></i></a>
-                    </li>
+                   
+<li><a class="close-link" style="margin-left: 15px"><i class="fa fa-times" ></i></a>                    </li>
                   </ul>
                   <div class="clearfix"></div>
                 </div>
