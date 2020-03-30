@@ -57,6 +57,7 @@
   html {
   scroll-behavior: smooth;
 }
+
 </style>
 
   </head>
@@ -558,7 +559,7 @@ function addh() {
                 </div>
               </div>
                 <!-- start of weather widget -->
-                <div class="col-md-4 col-sm-4 ">
+                <div >
                         
                   <div class="x_panel">
                     <div class="x_title">
@@ -603,23 +604,43 @@ function addh() {
        <label>Emplacement</label>
        <input type="text" name="empc" id="empc" class="form-control"  />
         <br />
-        <label>Etat</label>
-       <input type="text" name="etat_clim" id="etat_clim" class="form-control"  />
-       <br /> <label>temperature</label>
+           <label>Etat</label>
+           <br/>
+        <div class="radio">
+                            <label for="ouv"></label>
+                              <input type="radio" class="flat"  id="ouv" name="iCheck" > Ouvert
+                            
+                          </div>
+
+                          <br/>
+                          <div class="radio">
+                            <label for="ferm"></label>
+                              <input type="radio" class="flat" id="ferm" name="iCheck"> Ferme
+                            
+                          </div>
+     <div id="cond" class="desc">
+        
+      
+        <label>temperature</label>
        <input type="text" name="tempera" id="tempera" class="form-control" />
        <br />
         <label>Mode</label>
        <input type="text" name="mode" id="mode" class="form-control" />
+
        <br />
-       
+       </div>
+    
+
       </div>
+     
       <div class="modal-footer">
        <input type="hidden" name="id_clim" id="id_clim" />
    
       
 
-        <button type="button"  data-dismiss="modal" class="btn btn-success" onclick="add()">Add</button>
+        <button type="button"  data-dismiss="modal" class="btn btn-success" onclick="addt()">Add</button>
        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+     </div></div></form></div></div>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
        <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase.js"></script>
@@ -644,22 +665,102 @@ function addh() {
        
 
      
-          </script>
+
+var rootRef=firebase.database() .ref().child("climatiseur");
+   rootRef.on("child_added",snap => {
+  var id_clim=snap.child("id_clim").val();
+  var emplace=snap.child("emplace").val();
+  
+  if (snap.child("etat").val()) {
+    var etat="Ouvert";
+  var mode=snap.child("mode").val();
+  var temp=snap.child("temp").val();
+}
+  else
+    { var etat="Ferme";}
+  var marq=snap.child("marque").val();
+  $("#table_tem").append("<tr><th>"+ id_clim+"</th><th>"+marq+"</th><th>"+emplace+"</th><th>"+etat+"<button id=\"add_button\" data-toggle=\"modal\" data-target=\"#cl\" class=\"btn btn-danger pull-right btn-sm\" ><i class=\"fa fa-edit\"></i></button></th><th>"+temp+"</th><th>"+ mode+"</th></tr>");
+});
+
+
+function addt() {
+          const id_clim=document.getElementById('id_clim');
+          const database=firebase.database();
+          const rootRef=database.ref('climatiseur');
+          rootRef.child(id_clim.value).set({
+            id_clim:document.getElementById('id_clim').value,
+            marque:document.getElementById('marq').value,
+            emplace:document.getElementById('empc').value,
+            temp:document.getElementById('tempera').value,
+            mode:document.getElementById('mode').value ,
+            etat:document.getElementById('ouv').checked})}
+function updatet() {
+          const id_clim=document.getElementById('id_clim');
+          const database=firebase.database();
+          const rootRef=database.ref('climatiseur');
+               etat:document.getElementById('ouvv').checked
+          const newData={etat}
+            rootRef.child(id_clim.value).update(newData);
+        }
+
+</script>
+        
   <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
-  <script src="js/clim.js"></script>
+    
+     <div id="cl" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+     <div class="modal-dialog" role="document">
+       <form method="post" id="user_form" enctype="multipart/form-data">
+       <div class="modal-content">
+      <div class="modal-header">
+       <h4 class="modal-title" id="myModalLabel" >Modifier l'etat du climatiseur</h4>
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+           <label>Etat</label>
+           <br/>
+        <div class="radio">
+                            <label for="ouvv"></label>
+                              <input type="radio" class="flat"  id="ouvv" name="iCheck" > Ouvert
+                            
+                          </div>
+
+                          <br/>
+                          <div class="radio">
+                            <label for="ferm"></label>
+                              <input type="radio" class="flat" id="ferm" name="iCheck"> Ferme
+                            
+                          </div>
+     <div id="cond" class="desc">
+        
+      
+        <label>temperature</label>
+       <input type="text" name="tempera" id="t" class="form-control" />
+       <br />
+        <label>Mode</label>
+       <input type="text" name="mode" id="mode" class="form-control" />
+
+       <br />
+       </div>
+    
 
       </div>
-       </div></form>
-     </div>
+     
+      <div class="modal-footer">
+      
+   
+      
+
+        <button type="button"  data-dismiss="modal" class="btn btn-success" onclick="updatet()">valider</button>
+       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
+       </div></form></div></div>
                             <thead>
-                        <tr role="row"><th >Climatiseur</th><th>Marque</th><th >Etat</th><th>Temperature</th><th>Mode</th><th>Emplacement</th></tr>
+                        <tr role="row"><th >Climatiseur</th><th>Marque</th><th>Emplacement</th><th >Etat</th><th>Temperature</th><th>Mode</th></tr>
                       </thead>
                       <tbody id="table_tem">
+
                      </tbody>
-                    </table>  <label>
-                              <input type="checkbox" class="js-switch" checked /> Ouvert
-                            </label>
+                    </table>  
                      
 
                      
