@@ -416,7 +416,8 @@
                     </table></div></div></div></div>
                     
            <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase.js"></script>
+
+       <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase.js"></script>
 
       <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-database.js"></script>
 
@@ -434,6 +435,29 @@
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
+
+        var rootRef=firebase.database().ref().child("horaires");
+
+   rootRef.orderByChild("id").on("child_added",snap => {
+  var jour=snap.child("jour").val();
+  var debut=snap.child("debut").val();
+  var fin=snap.child("fin").val();
+
+  $("#table_body").append("<tr><th>"+ jour+"</th><th>"+debut+"</th><th>"+fin+"</th></tr>");
+
+});
+ 
+
+function addh() {
+          const jour=document.getElementById('jour');
+          const database=firebase.database();
+          const rootRef=database.ref('horaires');
+          rootRef.child(jour.value).set({
+            jour:document.getElementById('jour').value,
+            debut:document.getElementById('debut').value,
+           fin:document.getElementById('fin').value
+        });
+        }
         
         function reload_page(){
    window.location.reload();
@@ -443,7 +467,6 @@
               var etat_dispo = sna.val();  
               $("#nb_etud").append("<div>"+ etat_dispo+"</div>");
             }); 
-
    var nb_ch=firebase.database().ref('biblio/').child("nb_chaise");
       nb_ch.on('value', function(sna) {
               var etat_dispo = sna.val();  
@@ -456,42 +479,32 @@
               });
       $("#nbe").val(etat_dispo1).trigger('change');
       $('#valeur').val(etat_dispo-etat_dispo1).trigger('change');
-
-    
     });
-   
             });
-
        var doc=firebase.database().ref('biblio/').child("document");
       doc.on('value', function(sna) {
               var etat_dispo = sna.val();  
               $("#document").append("<div>"+ etat_dispo+"</div>");
             });
-
        var liv_emp=firebase.database().ref('biblio/').child("liv_emp");
       liv_emp.on('value', function(sna) {
               var etat_dispo = sna.val();  
               $("#liv_emp").append("<div>"+ etat_dispo+"</div>");
             });
-
       var temp=firebase.database().ref('biblio/').child("temp");
       temp.on('value', function(sna) {
               var etat_dispo = sna.val();  
       $("#temp").append("<h3>"+ etat_dispo+" °"+"</h3>");
             });
- 
-    
- 
 
-         //  $(document).ready(function(){
-         // var test=60;
-         // $('input[type=text]').attr({value : test});
-         //        });
+ //         //  $(document).ready(function(){
+ //         // var test=60;
+ //         // $('input[type=text]').attr({value : test});
+ //         //        });
           
           </script>
         
   <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
-  <script src="js/horaire.js"></script>
              <div class="col-md-12" id="etat">
              	  <div class="col-md-4">
                 <div class="x_panel">
@@ -628,6 +641,72 @@
         <button type="button"  data-dismiss="modal" class="btn btn-success" onclick="addt()">Add</button>
        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
      </div></div></form></div></div>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+       <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase.js"></script>
+
+      <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-database.js"></script>
+
+      <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+              apiKey: "AIzaSyBiUHy07aEruI_ZgBmg-A8ez6bBc-W1gtw",
+              authDomain: "smart-library1.firebaseapp.com",
+              databaseURL: "https://smart-library1.firebaseio.com",
+              projectId: "smart-library1",
+              storageBucket: "smart-library1.appspot.com",
+              messagingSenderId: "215824460430",
+              appId: "1:215824460430:web:6d9b13ab3c7629b377b7df",
+              measurementId: "G-BC9C4EV24W"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        
+       
+
+     
+
+var rootRef=firebase.database() .ref().child("climatiseur");
+   rootRef.on("child_added",snap => {
+  var id_clim=snap.child("id_clim").val();
+  var emplace=snap.child("emplace").val();
+  
+  if (snap.child("etat").val()) {
+    var etat="Ouvert";
+  var mode=snap.child("mode").val();
+  var temp=snap.child("temp").val();
+}
+  else
+    { var etat="Ferme";}
+  var marq=snap.child("marque").val();
+  $("#table_tem").append("<tr><th>"+ id_clim+"</th><th>"+marq+"</th><th>"+emplace+"</th><th>"+etat+"<button id=\"add_button\" data-toggle=\"modal\" data-target=\"#cl\" class=\"btn btn-danger pull-right btn-sm\" ><i class=\"fa fa-edit\"></i></button></th><th>"+temp+"</th><th>"+ mode+"</th></tr>");
+});
+
+
+function addt() {
+          const id_clim=document.getElementById('id_clim');
+          const database=firebase.database();
+          const rootRef=database.ref('climatiseur');
+          rootRef.child(id_clim.value).set({
+            id_clim:document.getElementById('id_clim').value,
+            marque:document.getElementById('marq').value,
+            emplace:document.getElementById('empc').value,
+            temp:document.getElementById('tempera').value,
+            mode:document.getElementById('mode').value ,
+            etat:document.getElementById('ouv').checked})}
+function updatet() {
+          const id_clim=document.getElementById('id_clim');
+          const database=firebase.database();
+          const rootRef=database.ref('climatiseur');
+               etat:document.getElementById('ouvv').checked
+          const newData={etat}
+            rootRef.child(id_clim.value).update(newData);
+        }
+
+</script>
+        
+  <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    
      <div id="cl" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
      <div class="modal-dialog" role="document">
        <form method="post" id="user_form" enctype="multipart/form-data">
@@ -637,9 +716,6 @@
            <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body">
-        <label>id-Climatiseur</label>
-       <input type="text" name="id_clim" id="id_clim" class="form-control"  />
-       <br />
            <label>Etat</label>
            <br/>
         <div class="radio">
@@ -678,19 +754,6 @@
        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
        </div></form></div></div>
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-
-       <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase.js"></script>
-
-      <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-database.js"></script>
-
-      <script src="js/clim.js">
-     
-</script>
-        
-
-    
-     
                             <thead>
                         <tr role="row"><th >Climatiseur</th><th>Marque</th><th>Emplacement</th><th >Etat</th><th>Temperature</th><th>Mode</th></tr>
                       </thead>
